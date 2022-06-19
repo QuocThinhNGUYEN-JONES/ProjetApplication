@@ -1,3 +1,5 @@
+<?php session_start() ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,21 +64,22 @@
                                     <div class="text-center ">
                                         <h4 class="mt-1 mb-5 pb-1 fw-bold">INSA CAR LOGIN</h4>
                                     </div>
+                                    
 
-                                    <form action="./combine.html" class="fw-bold">
+                                    <form name = "fo" action="login.php" class="fw-bold" method=POST>
                                         <p class="h5 pb-3 ">Please login to your account</p>
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="username">Username</label>
-                                            <input type="email" id="username" class="form-control " placeholder="Email address" />
+                                            <input type="email" name = "username" id="username" class="form-control " placeholder="Email address" required="required"/>
                                         </div>
 
                                         <div class="form-outline mb-4 ">
                                             <label class="form-label" for="password">Password</label>
-                                            <input type="password" id="password" class="form-control " />
+                                            <input type="password" name = "password" id="password" class="form-control required="required"" />
                                         </div>
 
                                         <div class="d-flex flex-column text-center pt-1 mb-5 pb-1 ">
-                                            <button class="btn btn-warning btn-block fa-lg mb-3 " type="submit">
+                                            <button class="btn btn-warning btn-block fa-lg mb-3 " name = "valider" type="submit">
                                               Log in
                                             </button>
                                             <a class="text-muted" href="#!">Forgot password?</a>
@@ -84,9 +87,9 @@
 
                                         <div class="d-flex align-items-center justify-content-center pb-4 ">
                                             <p class="mb-0 me-2 ">Don't have an account?</p>
-                                            <a href="./register-form.php">
+                                            <a href="./register-form.html">
                                                 <button type="button" class="btn btn-outline-danger fw-bold ">
-                                                Create new
+                                                <a href="register-form.php">Create New</a> 
                                               </button>
                                             </a>
                                         </div>

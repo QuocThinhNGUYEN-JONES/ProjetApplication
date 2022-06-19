@@ -16,7 +16,7 @@
         <div class="collapse navbar-collapse" id="navbar1">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="accueil" data-target="#page2:not(.show)" data-toggle="collapse">Catalogue</a>
+                    <a class="nav-link" href="catalogue" data-target="#page2:not(.show)" data-toggle="collapse">Catalogue</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="login" data-target="#page3:not(.show)" data-toggle="collapse">Account</a>

@@ -108,8 +108,10 @@
                     $conn = new PDO("mysql:host=$servername;dbname=insacar", $username, $password);
                     //On définit le mode d'erreur de PDO sur Exception
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    $sql = "INSERT INTO users (login, password,name, last name) VALUES ($mail, $mdp,$nom, $prenom)";
-                    $conn->query($sql);
+                    $sql = ("INSERT INTO `users`(`login`, `password`, `name`, `last name`, `card number`, `address`, `phone`) VALUES ('$mail','$mdp','$prenom','$nom','$num_etudiant','$adresse','$phone') ");
+                    $st = $conn->prepare($sql);
+                    $st->execute();
+
                 }
                 catch(PDOException $e){
                     echo "Erreur : " . $e->getMessage();

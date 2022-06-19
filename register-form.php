@@ -3,18 +3,19 @@
      require('connexiondb.php'); // Fichier PHP contenant la connexion à votre BDD
  
     if (isset($_SESSION['id'])){
-        header('Location: combine.html');
+        //header('Location: combine.html');
         exit();
     }
     
-    if(!empty($_POST)){
+    if(!empty($_POST))
+    {
         $valid = true;
  
         if (isset($_POST['first-name'])){
-            $prenom = $_POST['fist-name']; // on récupère le prénom
+            $prenom = $_POST['first-name']; // on récupère le prénom
         }
         if (isset($_POST['last-name'])){
-            $nom = htmlentities(trim($nom)); // On récupère le nom
+            $nom = $_POST['last-name']; // On récupère le nom
         }
         if (isset($_POST['email'])){
             $mail = $_POST['email']; // On récupère le mail
@@ -68,7 +69,7 @@
             $valid = false;
             $er_mail = "Le mail n'est pas valide";
         }
-        else{
+        /*else{
             // Verif si le mail est deja utilise
             $req_mail = $DB->query("SELECT mail FROM utilisateur WHERE mail = ?",
             array($mail)); 
@@ -78,7 +79,7 @@
                 $valid = false;
                 $er_mail = "Ce mail existe déjà";
             }
-        }
+        }*/
  
         // Verif mdp
         if(empty($mdp)) {
@@ -87,42 +88,41 @@
         }
 
             // Si tout est bon on insere dans la BDD
-        if($valid){
-            //$mdp = crypt($mdp, "$6$rounds=5000$macleapersonnaliseretagardersecret$");
-            //$date_creation_compte = date('Y-m-d H:i:s');
-
+            if($valid){
+                //$mdp = crypt($mdp, "$6$rounds=5000$macleapersonnaliseretagardersecret$");
+                //$date_creation_compte = date('Y-m-d H:i:s');
+    
+    
+                $servername = 'localhost';
+                $username = 'root';
+                $password = '';
+                //On établit la connexion
+                $conn = new mysqli($servername, $username, $password);
+                //On vérifie la connexion
+                if($conn->connect_error){
+                    die('Erreur : ' .$conn->connect_error);
+                }
+    
+    
+                try{
+                    $conn = new PDO("mysql:host=$servername;dbname=insacar", $username, $password);
+                    //On définit le mode d'erreur de PDO sur Exception
+                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    $sql = "INSERT INTO users (login, password,name, last name) VALUES ($mail, $mdp,$nom, $prenom)";
+                    $conn->query($sql);
+                }
+                catch(PDOException $e){
+                    echo "Erreur : " . $e->getMessage();
+                    exit();
+                }
+    
+                header('Location: login-form.php');
+                exit;
+            }
             
-            $servername = 'localhost';
-            $username = 'root';
-            $password = '';
-            //On établit la connexion
-            $conn = new mysqli($servername, $username, $password);
-            //On vérifie la connexion
-            if($conn->connect_error){
-                die('Erreur : ' .$conn->connect_error);
-            }
-            echo 'Connexion réussie';
-
-            try{
-                $conn = new PDO("mysql:host=$servername;dbname=insacar", $username, $password);
-                //On définit le mode d'erreur de PDO sur Exception
-                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                //echo 'Connexion réussie';
-                $sql = "INSERT INTO users(name, last name, login, password, card number, address) VALUES ($nom, $prenom, $mail, $mdp, $num_etudiant,$adresse)";
-                
-                $conn->exec($sql);
-    
-            }
-            catch(PDOException $e){
-                echo "Erreur : " . $e->getMessage();
-                exit();
-            }
-    
-            header('Location: login-form.php');
-            exit;
-        }
-        
     }
+        
+    
 ?>
 
 
@@ -169,7 +169,7 @@
 <body>
     <section class="container">
         <!-- TODO:Change href here -->
-        <form action="login-form.php" class="container py-5 h-100" method="POST">
+        <form action="" class="container py-5 h-100" method="POST">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col">
                     <div class="card card-registration my-4">

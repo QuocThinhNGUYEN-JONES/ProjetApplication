@@ -1,5 +1,58 @@
-<?php session_start() ?>
+<?php
+ session_start();
+ require_once 'connexiondb.php'; // On inclut la connexion à la base de données
+ 
+ if(!empty($_POST['username']) && !empty($_POST['password']) ) // Si il existe les champs email, password et qu'il sont pas vident
+ {
+     // Patch XSS
+     $email = htmlspecialchars($_POST['username']); 
+     $password = htmlspecialchars($_POST['password']);
+     
+     $email = strtolower($email); // email transformé en minuscule
+     
+     $query = "SELECT * FROM users WHERE login=? and password=? limit 1";
+     $stmt = $conn->prepare($query);
+     $stmt->execute(array($email,$password));
+     $data = $stmt->fetch();
+     $row = $stmt->rowCount();
 
+     // Si > à 0 alors l'utilisateur existe
+     
+     if($row > 0)
+     {
+                 if($password == $data['password'])
+                 {
+                     
+                     $_SESSION['email'] = $email ;
+                     $_SESSION['name'] = $data['name'] ;
+                     $_SESSION['last name'] = $data['last name'] ;
+                     $_SESSION['address'] = $data['address'] ;
+                     $_SESSION['phone'] = $data['phone'] ;
+                     $_SESSION['card number'] = $data['card number'];
+
+                     echo "connecetd" ;
+                     
+                     //die();
+                     header('Location: my-account.php');
+                     
+                     //exit();
+                     ;
+                     
+                 }
+             
+         
+     }
+     else{
+         
+         echo "Mot de passe erroné"; 
+        //header('Location: login-form.php'); 
+    }
+ }else
+ { echo "form vide"; 
+    //header('Location: login-form.php');
+ } // si le formulaire est envoyé sans aucune données
+ 
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,7 +119,7 @@
                                     </div>
                                     
 
-                                    <form name = "fo" action="login.php" class="fw-bold" method=POST>
+                                    <form name = "fo"  action = "login-form.php" class="fw-bold" method=POST>
                                         <p class="h5 pb-3 ">Please login to your account</p>
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="username">Username</label>
@@ -79,7 +132,7 @@
                                         </div>
 
                                         <div class="d-flex flex-column text-center pt-1 mb-5 pb-1 ">
-                                            <button class="btn btn-warning btn-block fa-lg mb-3 " name = "valider" type="submit">
+                                            <button class="btn btn-warning btn-block fa-lg mb-3 " name = "submit" type="submit">
                                               Log in
                                             </button>
                                             <a class="text-muted" href="#!">Forgot password?</a>
@@ -119,3 +172,6 @@
 </body>
 
 </html>
+
+
+ 

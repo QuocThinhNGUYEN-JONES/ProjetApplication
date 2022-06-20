@@ -1,3 +1,23 @@
+<?php
+   logged_only();
+   if(isset($_SESSION["email"]))
+   {
+        $firstname = $_SESSION["name"];
+        $lastname = $_SESSION["last name"];
+    }
+    
+    function logged_only(){
+        if(session_status() == PHP_SESSION_NONE){
+            session_start();
+        }
+        if(!isset($_SESSION['email'])){
+            header('Location: login-form.php');
+            exit();
+        }
+    }
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,7 +71,7 @@
                 </ul>
                 <ul class="navbar-nav p-lg-0 ">
                     <li class="d-flex nav-item px-lg-2 py-md-2">
-                            <a class="nav-link fs-5 fw-bold" type="submit">Name change here</a>
+                            <a class="nav-link fs-5 fw-bold" type="submit"><?php echo  "$firstname $lastname"; ?></a> 
                     </li>
                     <li class="d-flex nav-item px-lg-2 py-md-2">
                             <a href="./account-parameter.php" class="nav-link parameters"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">

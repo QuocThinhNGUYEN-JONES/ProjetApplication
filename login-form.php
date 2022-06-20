@@ -1,7 +1,6 @@
 <?php
  session_start();
  require_once 'connexiondb.php'; // On inclut la connexion à la base de données
- 
  if(!empty($_POST['username']) && !empty($_POST['password']) ) // Si il existe les champs email, password et qu'il sont pas vident
  {
      // Patch XSS
@@ -53,6 +52,9 @@
  } // si le formulaire est envoyé sans aucune données
  
  ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -174,4 +176,3 @@
 </html>
 
 
- 

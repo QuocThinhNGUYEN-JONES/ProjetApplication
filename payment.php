@@ -78,7 +78,7 @@
                                         <br/>
                                         <p>Total : </p>
                                         <br/>
-                                        <p><a class="btn btn-primary btn-lg" href="#" role="button">PAYMENT API</a></p>
+                                        <p><a class="btn btn-primary btn-lg" href="https://buy.stripe.com/test_fZe7t0ag639P2DSeUU" role="button">PAYMENT API</a></p>
                                         <hr>
                                     </div>
                         </main>

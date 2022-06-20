@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Vollkorn:ital,wght@0,600;1,500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;700&display=swap');
 :root {
     --pure-white: #fff;
     --black: #171613;
@@ -10,15 +11,33 @@
     --background-carousel: linear-gradient(#28313b, #8e9399);
     --reverse-background-carousel: linear-gradient(#8e9399, #28313b);
     --carousel-bottom: #485461;
-    --type-body: Open Sans, Helvetica, Arial, sans-serif;
+    --font-nav: 'Bebas Neue', cursive;
+    --font-body: 'Open Sans', sans-serif;
 }
+
+
+/* General Style */
 
 body {
     opacity: 0;
     transition: opacity 1s;
-    font-family: "Open Sans", sans-serif;
+    font-family: var(--font-nav);
     background: var(--black);
+    font-size: 18px;
+    letter-spacing: 0.1em;
 }
+
+nav {
+    font-family: var(--font-nav);
+    letter-spacing: 0.1em;
+}
+
+blockquote {
+    font-family: var(--type-body);
+}
+
+
+/* ==================================================================== */
 
 .wrapper {
     padding: 15px;
@@ -31,23 +50,6 @@ body {
     to {
         opacity: 1;
     }
-}
-
-blockquote {
-    font-family: var(--type-body);
-}
-
-.jumbotron button {
-    border-radius: 0;
-}
-
-h2 {
-    color: var(--primary);
-    text-shadow: 0 0 10px linear-gradient(#e66465, #9198e5);
-}
-
-.index-intro {
-    background-color: var(--black);
 }
 
 .index-intro .container {
@@ -144,6 +146,27 @@ h2 {
 .carousel-inner .carousel-item-end,
 .carousel-inner .carousel-item-start {
     transform: translateX(0);
+}
+
+@media (min-width: 768px) and (max-width: 1500px) {
+    .carousel-image-more>a>button {
+        font-size: 0.5em !important;
+        letter-spacing: 0.1em;
+    }
+}
+
+@media(min-width:1501px) {
+    button {
+        font-size: 1.25em !important;
+        letter-spacing: 0.1em;
+    }
+}
+
+@media(max-width:767px) {
+    button {
+        font-size: 1.25em !important;
+        letter-spacing: 0.1em;
+    }
 }
 
 

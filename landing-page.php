@@ -16,7 +16,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top " id="mainNavbar">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <h2 class="fw-bold">Logo</h2>
+                <h2 class="" id="logo-insa">INSA'CAR</h2>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mob-navbar" aria-label="Toggle">
           <span class="navbar-toggler-icon"></span>
@@ -71,9 +71,10 @@
             <div class="container ">
                 <div class="jumbotron d-flex mx-0 my-0 justify-content-end align-items-center h-100">
                     <div class="container-fluid pb-0 ms-1 pt-5" id="banner-caption">
-                        <blockquote class="col-md-12 fs-2 fw-bolder">STOP DREAMING, JUST DRIVE!</blockquote>
+                    <blockquote class="col-md-12 fs-1 fw-bolder">WITH INSA'CAR</blockquote>
+                        <blockquote class="col-md-12 fs-1 fw-bolder">STOP DREAMING, JUST DRIVE!</blockquote>
                         <a href="#offer-gallery" id="see-our-offer" class="my-0">
-                            <button class="btn btn-outline-info fw-bold text-white w-50 " type="button">SEE OUR OFFER</button>
+                            <button class="btn btn-outline-info fw-bold text-white w-100 text-nowrap" type="button">SEE OUR OFFER</button>
                         </a>
 
                     </div>
@@ -118,7 +119,7 @@
                                     </div>
                                     <div class="card-img-more">
                                         <a href="#" class="car-info-link">
-                                            <button class="btn btn-outline-light fw-bold text-nowrap">LOUER UNE BERLINE</button>
+                                            <button class="btn btn-outline-light fw-bold text-nowrap text-uppercase">rent a sedan</button>
                                         </a>
                                     </div>
                                 </div>
@@ -132,7 +133,7 @@
                                     </div>
                                     <div class="card-img-more">
                                         <a href="#" class="car-info-link">
-                                            <button class="btn btn-outline-light fw-bold text-nowrap">LOUER UN CABRIOLET</button>
+                                            <button class="btn btn-outline-light fw-bold text-nowrap text-uppercase">rent a convertible</button>
                                         </a>
                                     </div>
                                 </div>
@@ -146,7 +147,7 @@
                                     </div>
                                     <div class="card-img-more">
                                         <a href="#" class="car-info-link">
-                                            <button class="btn btn-outline-light fw-bold text-nowrap">LOCATION UTILITAIRE</button>
+                                            <button class="btn btn-outline-light fw-bold text-nowrap text-uppercase">utility rental</button>
                                         </a>
                                     </div>
                                 </div>
@@ -160,7 +161,7 @@
                                     </div>
                                     <div class="card-img-more">
                                         <a href="#" class="car-info-link">
-                                            <button class="btn btn-outline-light fw-bold text-nowrap">LOUER UN 7 PLACES OU +</button>
+                                            <button class="btn btn-outline-light fw-bold text-nowrap text-uppercase">rent a 7-seater or +</button>
                                         </a>
                                     </div>
                                 </div>
@@ -175,7 +176,7 @@
 
                                     <div class="card-img-more">
                                         <a href="#" class="car-info-link">
-                                            <button class="btn btn-outline-light fw-bold text-nowrap">LOUER UNE VOITURE DE LUXE</button>
+                                            <button class="btn btn-outline-light fw-bold text-nowrap text-uppercase">rent a luxury car</button>
                                         </a>
                                     </div>
                                 </div>
@@ -190,7 +191,7 @@
 
                                     <div class="card-img-more">
                                         <a href="#" class="car-info-link">
-                                            <button class="btn btn-outline-light fw-bold text-nowrap">LOUER UN SUV</button>
+                                            <button class="btn btn-outline-light fw-bold text-nowrap text-uppercase fs-lg-4">rent an suv</button>
                                         </a>
                                     </div>
                                 </div>
@@ -205,7 +206,7 @@
 
                                     <div class="card-img-more">
                                         <a href="#" class="car-info-link">
-                                            <button class="btn btn-outline-light fw-bold text-nowrap">LOUER UNE VOITURE ÉLECTRIQUE </button>
+                                            <button class="btn btn-outline-light fw-bold text-nowrap text-uppercase">rent an electric car</button>
                                         </a>
                                     </div>
                                 </div>
@@ -290,8 +291,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <!-- Here it goes the contact form -->
-                <div class="modal-body">
-                    <form action="https://formsubmit.co/c96f3a3cc25f6b9d9b00a392e9257551" method="POST" class="fw-bold">
+                <div class="modal-body" style="letter-spacing: 0.2em;">
+                    <form action="https://formsubmit.co/c96f3a3cc25f6b9d9b00a392e9257551" method="POST" class="">
                         <div class="form-group my1">
                             <label for="name">Name</label>
                             <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp" placeholder="Enter name" required />

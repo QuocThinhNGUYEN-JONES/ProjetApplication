@@ -1,3 +1,27 @@
+<?php
+    if (isset($_POST['Deco']))
+        {
+            session_start(); //to ensure you are using same session
+            session_destroy(); //destroy the session
+            header("Location: ./landing-page.php"); //to redirect back to "index.php" after logging out
+            exit();
+        }
+    logged_only();
+   
+    function logged_only(){
+        if(session_status() == PHP_SESSION_NONE){
+            session_start();
+        }
+        if(!isset($_SESSION['email'])){
+            header('Location: login-form.php');
+            exit();
+        }
+    }
+
+    
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,26 +49,30 @@
                     <h4 class="text-right">Profile Settings</h4>
                 </div>
                 <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control " placeholder="Amine" value="" name="first-name" disabled></div>
-                    <div class="col-md-6"><label class="labels">Last Name</label><input type="text" class="form-control" value="" placeholder="JAIIT" name="last-name" disabled></div>
+                    <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control " placeholder="<?php echo($_SESSION['name']);?>" value="" name="first-name" disabled></div>
+                    <div class="col-md-6"><label class="labels">Last Name</label><input type="text" class="form-control" value="" placeholder="<?php echo($_SESSION['last name']);?>" name="last-name" disabled></div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-6"><label class="labels">Telephone Number</label><input type="text" class="form-control" placeholder="0600000000" value=""  name="telephone-number" disabled></div>
-                    <div class="col-md-6"><label class="labels">Student Card</label><input type="text" class="form-control" placeholder="02931xxxxx" value="" name="student-card" disabled></div>
-                    <div class="col-md-12"><label class="labels">Address </label><input type="text" class="form-control" placeholder="125 Rue charlet" value="" name="address" disabled></div>
-                    <div class="col-md-12"><label class="labels">Email ID</label><input type="text" class="form-control" placeholder="example@hotmail.com" value="" name="email" disabled></div>
+                    <div class="col-md-6"><label class="labels">Telephone Number</label><input type="text" class="form-control" placeholder=<?php echo($_SESSION['phone']);?> value=""  name="telephone-number" disabled></div>
+                    <div class="col-md-6"><label class="labels">Student Card</label><input type="text" class="form-control" placeholder=<?php echo($_SESSION['card number']);?> value="" name="student-card" disabled></div>
+                    <div class="col-md-12"><label class="labels">Address </label><input type="text" class="form-control" placeholder=<?php echo($_SESSION['address']);?> value="" name="address" disabled></div>
+                    <div class="col-md-12"><label class="labels">Email ID</label><input type="text" class="form-control" placeholder=<?php echo($_SESSION['email']);?> value="" name="email" disabled></div>
                     
                 </div>
                 
             </div>
         </div>
     </div>
+
+    <form action="" method = POST>
     <div class="row">
         <div class="col-md-4"></div>
-        <div class="col-md-2 mb-5 justify-content-center"><button onclick="document.location='./my-account.php'" class="btn btn-outline-primary profile-button text-white" type="button">Disconnect</button></div>
+        <div class="col-md-2 mb-5 justify-content-center"><button  class="btn btn-outline-primary profile-button text-white" name = "Deco" type="submit">Disconnect</button></div>
         <div class="col-md-2 mb-5 "><button class="btn btn-primary profile-button" type="button">Edit Profile</button></div>
         <div class="col-md-4"></div>
     </div>
+    </form>
+
 </div>
 </div>
 </div>

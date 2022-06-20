@@ -2,7 +2,7 @@
  session_start();
  require_once 'connexiondb.php'; // On inclut la connexion à la base de données
  if(!empty($_POST['username']) && !empty($_POST['password']) ) // Si il existe les champs email, password et qu'il sont pas vident
- {
+{
      // Patch XSS
      $email = htmlspecialchars($_POST['username']); 
      $password = htmlspecialchars($_POST['password']);
@@ -28,29 +28,15 @@
                      $_SESSION['address'] = $data['address'] ;
                      $_SESSION['phone'] = $data['phone'] ;
                      $_SESSION['card number'] = $data['card number'];
-
-                     echo "connecetd" ;
-                     
-                     //die();
-                     header('Location: my-account.php');
-                     
+                     header('Location: ./my-account.php');
+                     //die();   
                      //exit();
-                     ;
+                     
                      
                  }
-             
-         
      }
-     else{
-         
-         echo "Mot de passe erroné"; 
-        //header('Location: login-form.php'); 
-    }
- }else
- { echo "form vide"; 
-    //header('Location: login-form.php');
- } // si le formulaire est envoyé sans aucune données
- 
+}
+
  ?>
 
 

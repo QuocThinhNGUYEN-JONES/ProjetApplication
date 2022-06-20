@@ -4,6 +4,31 @@
                 <title>INSA CAR - Payment</title>
                 <?php require("header.html") ?>
                 <link  rel="stylesheet" href="css/style_inner_payment.css">
+                <script  src="https://js.stripe.com/v3/"></script>
+                <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
+
+                <script type="text/javascript">
+                function daydiff()
+                {
+                    var t1=document.getElementById('retrieve').value;
+                    t1=t1.split('-');
+                    dt_t1=new Date(t1[0],t1[1],t1[2]);
+                    dt_t1_tm=dt_t1.getTime();
+                    var t2=document.getElementById('return').value;
+                    t2=t2.split('-');
+                    dt_t2=new Date(t2[0],t2[1],t2[2]);
+                    dt_t2_tm=dt_t2.getTime();
+                    var one_day = 24*60*60*1000;
+                    return Math.abs((dt_t1_tm-dt_t2_tm)/one_day);
+                }
+                function price_calculator(daydifference,pph)
+                {
+                    var price = Math.ceil(daydifference*pph);
+                    document.getElementById('display').innerHTML= price+"€" ;
+                    document.getElementById('display').style.display = 'inline';
+                    return price;
+                }
+                </script>
         </head> 
         <body> 
         <div class="d-flex flex-column min-vh-100">
@@ -58,7 +83,7 @@
                                                         <img class="img-fluid" src="https://imageonthefly.autodatadirect.com/images/?USER=eDealer&PW=edealer872&IMG=USC80HOC011A021001.jpg&width=440&height=262" alt="Alternate Text" />
                                                 </div>
                                                 <div class="card-image-overlay m-auto">
-                                                        <span class="card-detail-badge">20€/h</span>
+                                                        <span class="card-detail-badge">20€/jour</span>
                                                         <span class="card-detail-badge">Honda Accord LX</span>
                                                         <span class="card-detail-badge">13000 Kms</span>
                                                 </div>
@@ -75,10 +100,20 @@
                                         <hr>
                                         <div class="anchor" id="payment"></div>
                                         <h4>Payment</h4>
+                                            <label for="retrieve">Retrieve date:</label>
+
+                                            <input type="date" id="retrieve"  name="give" value="<?php echo date('Y-m-d'); ?>" min="<?php echo date('Y-m-d'); ?>"/>
+
+                                            <label for="start">Return date:</label>
+
+                                            <input type="date" id="return"  name="give" value="<?php echo date('Y-m-d'); ?>" min="<?php echo date('Y-m-d'); ?>"/>
                                         <br/>
-                                        <p>Total : </p>
                                         <br/>
-                                        <p><a class="btn btn-primary btn-lg" href="https://buy.stripe.com/test_fZe7t0ag639P2DSeUU" role="button">PAYMENT API</a></p>
+                                        <p><a class="btn btn-primary btn-lg" id="btn" role="button" onclick="price_calculator(daydiff(),19.99)">GET THE PRICE</a></p>
+                                        <br>
+                                        <p>Total : <div id="display"></div>
+                                        <br/><br/>
+                                        <p><a class="btn btn-primary btn-lg" href="https://buy.stripe.com/test_fZe7t0ag639P2DSeUU" id="btn" role="button">PAY</a></p>
                                         <hr>
                                     </div>
                         </main>

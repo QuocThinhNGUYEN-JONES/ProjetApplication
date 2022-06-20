@@ -29,6 +29,7 @@
                      $_SESSION['address'] = $data['address'] ;
                      $_SESSION['phone'] = $data['phone'] ;
                      $_SESSION['card number'] = $data['card number'];
+                     header('Location: ./my-account.php');
                      //die();   
                      //exit();
                      

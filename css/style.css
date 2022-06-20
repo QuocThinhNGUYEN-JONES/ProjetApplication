@@ -8,6 +8,7 @@
     --grey: #949493;
     --hover-white: rgba(255, 255, 255, 0.099);
     --background-carousel: linear-gradient(#28313b, #8e9399);
+    --reverse-background-carousel: linear-gradient(#8e9399, #28313b);
     --carousel-bottom: #485461;
     --type-body: Open Sans, Helvetica, Arial, sans-serif;
 }
@@ -77,7 +78,7 @@ h2 {
 }
 
 .card-img-more {
-    background: var(--carousel-bottom);
+    background: var(--reverse-background-carousel);
 }
 
 .card-img-more>a>button,

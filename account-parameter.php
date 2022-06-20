@@ -1,4 +1,11 @@
 <?php
+    if (isset($_POST['Deco']))
+        {
+            session_start(); //to ensure you are using same session
+            session_destroy(); //destroy the session
+            header("Location: ./landing-page.php"); //to redirect back to "index.php" after logging out
+            exit();
+        }
     logged_only();
    
     function logged_only(){
@@ -10,6 +17,8 @@
             exit();
         }
     }
+
+    
     
 ?>
 
@@ -54,12 +63,16 @@
             </div>
         </div>
     </div>
+
+    <form action="" method = POST>
     <div class="row">
         <div class="col-md-4"></div>
-        <div class="col-md-2 mb-5 justify-content-center"><button onclick="document.location='./my-account.php'" class="btn btn-outline-primary profile-button text-white" type="button">Disconnect</button></div>
+        <div class="col-md-2 mb-5 justify-content-center"><button  class="btn btn-outline-primary profile-button text-white" name = "Deco" type="submit">Disconnect</button></div>
         <div class="col-md-2 mb-5 "><button class="btn btn-primary profile-button" type="button">Edit Profile</button></div>
         <div class="col-md-4"></div>
     </div>
+    </form>
+
 </div>
 </div>
 </div>

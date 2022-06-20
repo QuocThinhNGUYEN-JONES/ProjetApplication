@@ -291,8 +291,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <!-- Here it goes the contact form -->
-                <div class="modal-body">
-                    <form action="https://formsubmit.co/c96f3a3cc25f6b9d9b00a392e9257551" method="POST" class="fw-bold">
+                <div class="modal-body" style="letter-spacing: 0.2em;">
+                    <form action="https://formsubmit.co/c96f3a3cc25f6b9d9b00a392e9257551" method="POST" class="">
                         <div class="form-group my1">
                             <label for="name">Name</label>
                             <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp" placeholder="Enter name" required />

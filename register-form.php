@@ -193,13 +193,13 @@
                                         <div class="col-md-6 mb-4">
                                             <div class="form-outline">
                                                 <label class="form-label" for="first-name">First name *</label>
-                                                <input type="text" id="first-name" name="first-name" class="form-control form-control-lg" />
+                                                <input type="text" id="first-name" name="first-name" class="form-control form-control-lg" required pattern="^[A-Za-z '-]+$" />
                                             </div>
                                         </div>
                                         <div class="col-md-6 mb-4">
                                             <div class="form-outline">
                                                 <label class="form-label" for="last-name">Last name *</label>
-                                                <input type="text" id="last-name" name="last-name" class="form-control form-control-lg" />
+                                                <input type="text" id="last-name" name="last-name" class="form-control form-control-lg"  required pattern="^[A-Za-z '-]+$" />
                                             </div>
                                         </div>
                                     </div>

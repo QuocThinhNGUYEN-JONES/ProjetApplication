@@ -1,3 +1,5 @@
+// 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +14,7 @@
 </head>
 
 <body onload="document.body.style.opacity='1'">
-    <nav class=" navbar navbar-expand-lg navb   ar-dark bg-dark  " id="mainNavbar ">
+    <nav class=" navbar navbar-expand-lg navbar-dark bg-dark  " id="mainNavbar ">
         <div class="container-fluid ">
             <a class="navbar-brand " href="/ProjetApplication/home">
                 <h2 class=" " id="logo-insa ">INSA'CAR</h2>
@@ -495,9 +497,7 @@
 
 </html>
 <?php
-
     $type = $_GET["type"];
-    echo '<script> document.getElementById("'.htmlspecialchars($string, ENT_QUOTES, 'UTF-8').'").style.display = "block"; </script>';
-    // echo '<script> document.getElementById("'.$type.'").style.display = "block"; </script>';
+    echo '<script> document.getElementById("'.$type.'").style.display = "block"; </script>';
 
 ?>

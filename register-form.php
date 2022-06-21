@@ -48,6 +48,16 @@
         if(empty($num_etudiant)){
             $valid = false;
         }
+        else{
+            $req_etu = $conn->query("SELECT card number FROM users WHERE card number = ?",
+            array($mail)); 
+            $req_etu = $req_etu->fetch();
+ 
+            if ($req_etu['card number'] <> ""){
+                $valid = false;
+                $er_mail = "Ce mail existe déjà";
+            }
+        }
 
         // Vérification de l'email
         if(empty($mail)){
@@ -69,9 +79,9 @@
             $valid = false;
             $er_mail = "Le mail n'est pas valide";
         }
-        /*else{
+        else{
             // Verif si le mail est deja utilise
-            $req_mail = $DB->query("SELECT mail FROM utilisateur WHERE mail = ?",
+            $req_mail = $conn->query("SELECT mail FROM utilisateur WHERE mail = ?",
             array($mail)); 
             $req_mail = $req_mail->fetch();
  
@@ -79,7 +89,7 @@
                 $valid = false;
                 $er_mail = "Ce mail existe déjà";
             }
-        }*/
+        }
  
         // Verif mdp
         if(empty($mdp)) {

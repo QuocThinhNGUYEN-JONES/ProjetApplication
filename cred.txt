@@ -1,6 +1,0 @@
-stripe - car.application.insacvl@gmail.com:moneymoney2022
-PRIVATE KEY : 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
-
-
-PG308 : price_1LCkTjIc6AS6fjflX1e6CGTf
-Honda Super Car : price_1LCkRqIc6AS6fjflTt1Gvc1m

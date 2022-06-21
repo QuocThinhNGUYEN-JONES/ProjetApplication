@@ -1,5 +1,3 @@
-// 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,9 +12,9 @@
 </head>
 
 <body onload="document.body.style.opacity='1'">
-    <nav class=" navbar navbar-expand-lg navbar-dark bg-dark  " id="mainNavbar ">
+    <nav class=" navbar navbar-expand-lg navb   ar-dark bg-dark  " id="mainNavbar ">
         <div class="container-fluid ">
-            <a class="navbar-brand " href="# ">
+            <a class="navbar-brand " href="/ProjetApplication/home">
                 <h2 class=" " id="logo-insa ">INSA'CAR</h2>
             </a>
             <button class="navbar-toggler " type="button " data-bs-toggle="collapse " data-bs-target="#mob-navbar " aria-label="Toggle ">
@@ -25,7 +23,7 @@
             <div class="collapse navbar-collapse " id="mob-navbar ">
                 <ul class="navbar-nav mb-2 mb-lg-0 mx-auto ms-0 ">
                     <li class="nav-item ">
-                        <a class="nav-link active " aria-current="page " href="# ">Home</a>
+                        <a class="nav-link active " aria-current="page " href="/ProjetApplication/home">Home</a>
                     </li>
                     <li class="nav-item ">
                         <a class="nav-link " href="# ">About Us</a>
@@ -497,7 +495,9 @@
 
 </html>
 <?php
+
     $type = $_GET["type"];
-    echo '<script> document.getElementById("'.$type.'").style.display = "block"; </script>';
+    echo '<script> document.getElementById("'.htmlspecialchars($string, ENT_QUOTES, 'UTF-8').'").style.display = "block"; </script>';
+    // echo '<script> document.getElementById("'.$type.'").style.display = "block"; </script>';
 
 ?>

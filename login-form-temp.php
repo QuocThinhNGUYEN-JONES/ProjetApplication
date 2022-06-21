@@ -53,19 +53,14 @@ if(!empty($_POST['username']) && !empty($_POST['password']))
     {
 
         $query = "SELECT * FROM users WHERE login=? limit 1";
-        //var_dump($query);
         $stmt = $conn->prepare($query);
-        
         $stmt->execute(array($_POST['username']));
-        echo $_POST['username'];
-        echo $_POST['password'];
-
         $data_verif = $stmt->fetch();
         
         // Si le pseudo existe bien
         if(!empty($data_verif['login']))
         {
-           echo($data_verif['login']);
+        
            // Si le mot de passe est bon
            if($data_verif['password'] == trim($_POST['password']))
            {
@@ -115,14 +110,14 @@ if(!empty($_POST['username']) && !empty($_POST['password']))
                }
 
 
-           echo 'Mot de passe incorrect';
+           $msg_err = 'Mot de passe incorrect' ;
            }
 
         }
         // Si le pseudo n'existe pas
         else
         {
-            echo 'Pseudonyme incorrect';
+            $msg_err = 'Pseudonyme incorrect';
         }
 
 
@@ -130,7 +125,7 @@ if(!empty($_POST['username']) && !empty($_POST['password']))
     // S'il y a déjà eu 10 tentatives dans la journée, on affiche un message d'erreur
     else
     {
-        echo 'Trop de tentatives d\'authentification aujourd\'hui';
+        $msg_err = 'Trop de tentatives d\'authentification aujourd\'hui';
     }
 
 
@@ -226,8 +221,11 @@ function valid_donnees($donnees){
                                         <div class="form-outline mb-4 ">
                                             <label class="form-label" for="password">Password</label>
                                             <input type="password" name = "password" id="password" class="form-control required="required"" />
+                                            <br>
+                                            <p id="err_msg" class="text-danger"><?php if(isset($msg_err)){ 
+                                                echo($msg_err);}
+                                                ?></p>
                                         </div>
-
                                         <div class="d-flex flex-column text-center pt-1 mb-5 pb-1 ">
                                             <button class="btn btn-warning btn-block fa-lg mb-3 " name = "submit" type="submit">
                                               Log in

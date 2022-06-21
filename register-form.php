@@ -211,22 +211,22 @@
                                     </div>
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="student-number">Student card *</label>
-                                        <input type="text" id="student-card-number" name="student-card-number" class="form-control form-control-lg" />
+                                        <input type="text" id="student-card-number" name="student-card-number" class="form-control form-control-lg" required />
 
                                     </div>
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="telephone-number">Telephone number *</label>
-                                        <input type="text" id="telephone-number" name="telephone-number" class="form-control form-control-lg" />
+                                        <input type="text" id="telephone-number" name="telephone-number" class="form-control form-control-lg" required/>
 
                                     </div>
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="email">Email address *</label>
-                                        <input type="text" id="email" name="email" class="form-control form-control-lg" />
+                                        <input type="text" id="email" name="email" class="form-control form-control-lg" required />
 
                                     </div>
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="password">Password *</label>
-                                        <input type="text" id="mdp" name="mdp" class="form-control form-control-lg" />
+                                        <input type="text" id="mdp" name="mdp" class="form-control form-control-lg" required/>
 
                                     </div>
                                     <div class="d-flex justify-content-end pt-3">

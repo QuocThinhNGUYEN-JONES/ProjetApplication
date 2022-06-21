@@ -16,7 +16,7 @@
 <body onload="document.body.style.opacity='1'">
     <nav class=" navbar navbar-expand-lg navbar-dark bg-dark  " id="mainNavbar ">
         <div class="container-fluid ">
-            <a class="navbar-brand " href="/ProjetApplication/home">
+            <a class="navbar-brand " href="/home">
                 <h2 class=" " id="logo-insa ">INSA'CAR</h2>
             </a>
             <button class="navbar-toggler " type="button " data-bs-toggle="collapse " data-bs-target="#mob-navbar " aria-label="Toggle ">
@@ -25,7 +25,7 @@
             <div class="collapse navbar-collapse " id="mob-navbar ">
                 <ul class="navbar-nav mb-2 mb-lg-0 mx-auto ms-0 ">
                     <li class="nav-item ">
-                        <a class="nav-link active " aria-current="page " href="/ProjetApplication/home">Home</a>
+                        <a class="nav-link active " aria-current="page " href="/home">Home</a>
                     </li>
                     <li class="nav-item ">
                         <a class="nav-link " href="# ">About Us</a>
@@ -81,7 +81,10 @@
                     <img src="./assets/cars/category_7places/bmw-2.png" class="card-img-top" alt="bmw">
                     <div class="card-body mt-5 border-top ">
                         <h5 class="card-title">BMW</h5>
-                        <a href="" class="btn btn-warning">rent now</a>
+                        <form action="/payment">
+                            
+                        </form>
+                        <a href="/payment?" class="btn btn-warning">rent now</a>
                     </div>
                 </div>
             </div>

@@ -15,7 +15,7 @@
 <body onload="document.body.style.opacity='1'">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top " id="mainNavbar">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/ProjetApplication/home">
                 <h2 class="logo-insa">INSA'CAR</h2>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mob-navbar" aria-label="Toggle">
@@ -24,7 +24,7 @@
             <div class="collapse navbar-collapse" id="mob-navbar">
                 <ul class="navbar-nav mb-2 mb-lg-0 mx-auto ms-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="/ProjetApplication/home">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">About Us</a>
@@ -50,12 +50,12 @@
                 </ul>
                 <ul class="navbar-nav p-lg-0 ">
                     <li class="d-flex nav-item px-lg-2 py-md-2">
-                        <form action="./login-form.php" class="d-flex">
+                        <form action="./login" class="d-flex">
                             <button class="btn btn-outline-warning" type="submit">Login</button>
                         </form>
                     </li>
                     <li class="d-flex nav-item px-lg-2 py-md-2">
-                        <form action="./register-form.php" class="d-flex">
+                        <form action="./register" class="d-flex">
                             <button class="btn btn-warning" type="submit">Sign Up</button>
                         </form>
                     </li>
@@ -118,7 +118,7 @@
                                         <img src="./assets/berline-car.png" class="img-fluid" alt="berline car" />
                                     </div>
                                     <div class="card-img-more">
-                                        <a href="#" class="car-info-link">
+                                        <a href="/ProjetApplication/catalogue?type=suv" class="car-info-link">
                                             <button class="btn btn-outline-light fw-bold text-nowrap text-uppercase">rent a sedan</button>
                                         </a>
                                     </div>
@@ -132,7 +132,7 @@
                                         <img src="./assets/cabriolet.png" class="img-fluid" alt="cabriolet car" />
                                     </div>
                                     <div class="card-img-more">
-                                        <a href="#" class="car-info-link">
+                                        <a href="/ProjetApplication/catalogue?type=cabriolet" class="car-info-link">
                                             <button class="btn btn-outline-light fw-bold text-nowrap text-uppercase">rent a convertible</button>
                                         </a>
                                     </div>
@@ -146,7 +146,7 @@
                                         <img src="./assets/utilitaire-car.png" class="img-fluid" alt="utilitaire car" />
                                     </div>
                                     <div class="card-img-more">
-                                        <a href="#" class="car-info-link">
+                                        <a href="/ProjetApplication/catalogue?type=utilitaire" class="car-info-link">
                                             <button class="btn btn-outline-light fw-bold text-nowrap text-uppercase">utility rental</button>
                                         </a>
                                     </div>
@@ -160,7 +160,7 @@
                                         <img src="./assets/car7+.png" class="img-fluid " alt="more than 7 seats car" />
                                     </div>
                                     <div class="card-img-more">
-                                        <a href="#" class="car-info-link">
+                                        <a href="/ProjetApplication/catalogue?type=7places" class="car-info-link">
                                             <button class="btn btn-outline-light fw-bold text-nowrap text-uppercase">rent a 7-seater or +</button>
                                         </a>
                                     </div>
@@ -175,7 +175,7 @@
                                     </div>
 
                                     <div class="card-img-more">
-                                        <a href="#" class="car-info-link">
+                                        <a href="/ProjetApplication/catalogue?type=luxe" class="car-info-link">
                                             <button class="btn btn-outline-light fw-bold text-nowrap text-uppercase">rent a luxury car</button>
                                         </a>
                                     </div>
@@ -190,7 +190,7 @@
                                     </div>
 
                                     <div class="card-img-more">
-                                        <a href="#" class="car-info-link">
+                                        <a href="/ProjetApplication/catalogue?type=suv" class="car-info-link">
                                             <button class="btn btn-outline-light fw-bold text-nowrap text-uppercase fs-lg-4">rent an suv</button>
                                         </a>
                                     </div>
@@ -205,7 +205,7 @@
                                     </div>
 
                                     <div class="card-img-more">
-                                        <a href="#" class="car-info-link">
+                                        <a href="/ProjetApplication/catalogue?type=ve" class="car-info-link">
                                             <button class="btn btn-outline-light fw-bold text-nowrap text-uppercase">rent an electric car</button>
                                         </a>
                                     </div>

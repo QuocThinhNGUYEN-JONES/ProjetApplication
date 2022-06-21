@@ -1,3 +1,5 @@
+// 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,16 +67,20 @@
         </div>
     </nav>
 
-    <section id="cate-1" class="container">
+
+
+
+
+    <section id="7places" class="container" style="display:none">
         <h1 class="text-center text-primary">
-            RENT SUV
+            Rent a 7 Places Vehicle
         </h1>
         <div class="row row-cols-auto g-4 text-center">
             <div class="col">
                 <div class="card">
                     <img src="./assets/cars/category_7places/bmw-2.png" class="card-img-top" alt="bmw">
                     <div class="card-body mt-5 border-top ">
-                        <h5 class="card-title">Car name here!!!</h5>
+                        <h5 class="card-title">BMW</h5>
                         <a href="" class="btn btn-warning">rent now</a>
                     </div>
                 </div>
@@ -83,7 +89,7 @@
                 <div class="card ">
                     <img src="./assets/cars/category_7places/citroen-van.png" class="card-img-top" alt="">
                     <div class="card-body mt-5 border-top">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">Citroen Van</h5>
                         <a href="" class="btn btn-warning">rent now</a>
                     </div>
                 </div>
@@ -92,7 +98,7 @@
                 <div class="card">
                     <img src="./assets/cars/category_7places/mb-v.png" class="card-img-top" alt="...">
                     <div class="card-body mt-5 border-top">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">MB-V</h5>
                         <a href="" class="btn btn-warning">rent now</a>
                     </div>
                 </div>
@@ -101,265 +107,330 @@
                 <div class="card">
                     <img src="./assets/cars/category_7places/peugeot-5008.png" class="card-img-top" alt="...">
                     <div class="card-body mt-5 border-top">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">Peugeot 5008</h5>
                         <a href="" class="btn btn-warning">rent now</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="cate-2" class="container">
+
+    <section id="berline" class="container" style="display:none">
         <h1 class="text-center text-primary">
-            RENT SUV
+            RENT a berline
         </h1>
         <div class="row row-cols-auto g-4 text-center">
             <div class="col">
                 <div class="card">
-                    <img src="./assets/cars/category_7places/bmw-2.png" class="card-img-top" alt="bmw">
+                    <img src="./assets/cars/category_berline/audi-a1.png" class="card-img-top" alt="bmw">
                     <div class="card-body mt-5 border-top ">
-                        <h5 class="card-title">Car name here!!!</h5>
+                        <h5 class="card-title">Audi A1</h5>
                         <a href="" class="btn btn-warning">rent now</a>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card ">
-                    <img src="./assets/cars/category_7places/citroen-van.png" class="card-img-top" alt="">
+                    <img src="./assets/cars/category_berline/bmw-1er.png" class="card-img-top" alt="">
                     <div class="card-body mt-5 border-top">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">BMW 1</h5>
                         <a href="" class="btn btn-warning">rent now</a>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card">
-                    <img src="./assets/cars/category_7places/mb-v.png" class="card-img-top" alt="...">
+                    <img src="./assets/cars/category_berline/fiat-500.png" class="card-img-top" alt="...">
                     <div class="card-body mt-5 border-top">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">Fiat 500</h5>
                         <a href="" class="btn btn-warning">rent now</a>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card">
-                    <img src="./assets/cars/category_7places/peugeot-5008.png" class="card-img-top" alt="...">
+                    <img src="./assets/cars/category_berline/peugeot-208.png" class="card-img-top" alt="...">
                     <div class="card-body mt-5 border-top">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">peugeot 208</h5>
+                        <a href="" class="btn btn-warning">rent now</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col">
+                <div class="card">
+                    <img src="./assets/cars/category_berline/peugeot-308.png" class="card-img-top" alt="...">
+                    <div class="card-body mt-5 border-top">
+                        <h5 class="card-title">peugeot 308</h5>
+                        <a href="" class="btn btn-warning">rent now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="./assets/cars/category_berline/vw-t.png" class="card-img-top" alt="...">
+                    <div class="card-body mt-5 border-top">
+                        <h5 class="card-title">VW-t</h5>
                         <a href="" class="btn btn-warning">rent now</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="cate-3" class="container">
+    <section id="cabriolet"class="container" style="display:none">
         <h1 class="text-center text-primary">
-            RENT SUV
+            RENT a Cabriolet Car
         </h1>
         <div class="row row-cols-auto g-4 text-center">
             <div class="col">
                 <div class="card">
-                    <img src="./assets/cars/category_7places/bmw-2.png" class="card-img-top" alt="bmw">
+                    <img src="./assets/cars/category_cabriolet/bmw-2er.png" class="card-img-top" alt="bmw">
                     <div class="card-body mt-5 border-top ">
-                        <h5 class="card-title">Car name here!!!</h5>
+                        <h5 class="card-title">bmw-2er</h5>
                         <a href="" class="btn btn-warning">rent now</a>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card ">
-                    <img src="./assets/cars/category_7places/citroen-van.png" class="card-img-top" alt="">
+                    <img src="./assets/cars/category_cabriolet/bmw-z4.png" class="card-img-top" alt="">
                     <div class="card-body mt-5 border-top">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">bmw-z4</h5>
                         <a href="" class="btn btn-warning">rent now</a>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card">
-                    <img src="./assets/cars/category_7places/mb-v.png" class="card-img-top" alt="...">
+                    <img src="./assets/cars/category_cabriolet/mb-c.png" class="card-img-top" alt="...">
                     <div class="card-body mt-5 border-top">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">mb c</h5>
                         <a href="" class="btn btn-warning">rent now</a>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card">
-                    <img src="./assets/cars/category_7places/peugeot-5008.png" class="card-img-top" alt="...">
+                    <img src="./assets/cars/category_cabriolet/mini-cooper.png" class="card-img-top" alt="...">
                     <div class="card-body mt-5 border-top">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">mini cooper</h5>
+                        <a href="" class="btn btn-warning">rent now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card ">
+                    <img src="./assets/cars/category_cabriolet/porsche-911.png" class="card-img-top" alt="">
+                    <div class="card-body mt-5 border-top">
+                        <h5 class="card-title">porsche 911</h5>
+                        <a href="" class="btn btn-warning">rent now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card ">
+                    <img src="./assets/cars/category_cabriolet/vw-t.png" class="card-img-top" alt="">
+                    <div class="card-body mt-5 border-top">
+                        <h5 class="card-title">vw t</h5>
                         <a href="" class="btn btn-warning">rent now</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="cate-4" class="container">
+    <section id="luxe"class="container" style="display:none">
         <h1 class="text-center text-primary">
-            RENT SUV
+            RENT A LUXURY car
         </h1>
         <div class="row row-cols-auto g-4 text-center">
             <div class="col">
                 <div class="card">
-                    <img src="./assets/cars/category_7places/bmw-2.png" class="card-img-top" alt="bmw">
+                    <img src="./assets/cars/category_luxe/mb-c.png" class="card-img-top" alt="bmw">
                     <div class="card-body mt-5 border-top ">
-                        <h5 class="card-title">Car name here!!!</h5>
+                        <h5 class="card-title">mb c</h5>
                         <a href="" class="btn btn-warning">rent now</a>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card ">
-                    <img src="./assets/cars/category_7places/citroen-van.png" class="card-img-top" alt="">
+                    <img src="./assets/cars/category_luxe/porsche-panamera.png" class="card-img-top" alt="">
                     <div class="card-body mt-5 border-top">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">porsche panamera</h5>
                         <a href="" class="btn btn-warning">rent now</a>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card">
-                    <img src="./assets/cars/category_7places/mb-v.png" class="card-img-top" alt="...">
+                    <img src="./assets/cars/category_luxe/porsche-panamera4.png" class="card-img-top" alt="...">
                     <div class="card-body mt-5 border-top">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">porsche panamera 4</h5>
                         <a href="" class="btn btn-warning">rent now</a>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card">
-                    <img src="./assets/cars/category_7places/peugeot-5008.png" class="card-img-top" alt="...">
+                    <img src="./assets/cars/category_luxe/porsche-taycan.png" class="card-img-top" alt="...">
                     <div class="card-body mt-5 border-top">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title"> porsche taycan </h5>
                         <a href="" class="btn btn-warning">rent now</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="cate-5" class="container">
+    <section id="suv"class="container" style="display:none">
         <h1 class="text-center text-primary">
             RENT SUV
         </h1>
         <div class="row row-cols-auto g-4 text-center">
             <div class="col">
                 <div class="card">
-                    <img src="./assets/cars/category_7places/bmw-2.png" class="card-img-top" alt="bmw">
+                    <img src="./assets/cars/category_suv/audi-q5.png" class="card-img-top" alt="bmw">
                     <div class="card-body mt-5 border-top ">
-                        <h5 class="card-title">Car name here!!!</h5>
+                        <h5 class="card-title">audi q5</h5>
                         <a href="" class="btn btn-warning">rent now</a>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card ">
-                    <img src="./assets/cars/category_7places/citroen-van.png" class="card-img-top" alt="">
+                    <img src="./assets/cars/category_suv/bmw-x1.png" class="card-img-top" alt="">
                     <div class="card-body mt-5 border-top">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">bmw x1</h5>
                         <a href="" class="btn btn-warning">rent now</a>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card">
-                    <img src="./assets/cars/category_7places/mb-v.png" class="card-img-top" alt="...">
+                    <img src="./assets/cars/category_suv/bmw-x3.png" class="card-img-top" alt="...">
                     <div class="card-body mt-5 border-top">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">bmw x3</h5>
                         <a href="" class="btn btn-warning">rent now</a>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card">
-                    <img src="./assets/cars/category_7places/peugeot-5008.png" class="card-img-top" alt="...">
+                    <img src="./assets/cars/category_suv/citroen-ds7.png" class="card-img-top" alt="...">
                     <div class="card-body mt-5 border-top">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">citroen ds7</h5>
+                        <a href="" class="btn btn-warning">rent now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="./assets/cars/category_suv/ford-kuga.png" class="card-img-top" alt="...">
+                    <div class="card-body mt-5 border-top">
+                        <h5 class="card-title">ford kuga</h5>
+                        <a href="" class="btn btn-warning">rent now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="./assets/cars/category_suv/range-rover.png" class="card-img-top" alt="...">
+                    <div class="card-body mt-5 border-top">
+                        <h5 class="card-title">range rover</h5>
                         <a href="" class="btn btn-warning">rent now</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="cate-6" class="container">
+    <section id="utilitaire"class="container" style="display:none">
         <h1 class="text-center text-primary">
-            RENT SUV
+            RENT a Utilitaire
         </h1>
         <div class="row row-cols-auto g-4 text-center">
             <div class="col">
                 <div class="card">
-                    <img src="./assets/cars/category_7places/bmw-2.png" class="card-img-top" alt="bmw">
+                    <img src="./assets/cars/category_utilitaire/audi-a6.png" class="card-img-top" alt="bmw">
                     <div class="card-body mt-5 border-top ">
-                        <h5 class="card-title">Car name here!!!</h5>
+                        <h5 class="card-title">Audi a6</h5>
                         <a href="" class="btn btn-warning">rent now</a>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card ">
-                    <img src="./assets/cars/category_7places/citroen-van.png" class="card-img-top" alt="">
+                    <img src="./assets/cars/category_utilitaire/skoda-octavia.png" class="card-img-top" alt="">
                     <div class="card-body mt-5 border-top">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">skoda octavia</h5>
                         <a href="" class="btn btn-warning">rent now</a>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card">
-                    <img src="./assets/cars/category_7places/mb-v.png" class="card-img-top" alt="...">
+                    <img src="./assets/cars/category_utilitaire/vw-passat.png" class="card-img-top" alt="...">
                     <div class="card-body mt-5 border-top">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="" class="btn btn-warning">rent now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="./assets/cars/category_7places/peugeot-5008.png" class="card-img-top" alt="...">
-                    <div class="card-body mt-5 border-top">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">VW passat</h5>
                         <a href="" class="btn btn-warning">rent now</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="cate-7" class="container">
+    <section id="ve"class="container" style="display:none">
         <h1 class="text-center text-primary">
-            RENT SUV
+            RENT a electric vehicle
         </h1>
         <div class="row row-cols-auto g-4 text-center">
             <div class="col">
                 <div class="card">
-                    <img src="./assets/cars/category_7places/bmw-2.png" class="card-img-top" alt="bmw">
+                    <img src="./assets/cars/category_ve/ds3.png" class="card-img-top" alt="bmw">
                     <div class="card-body mt-5 border-top ">
-                        <h5 class="card-title">Car name here!!!</h5>
+                        <h5 class="card-title">DS 3</h5>
                         <a href="" class="btn btn-warning">rent now</a>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card ">
-                    <img src="./assets/cars/category_7places/citroen-van.png" class="card-img-top" alt="">
+                    <img src="./assets/cars/category_ve/fiat500.png" class="card-img-top" alt="">
                     <div class="card-body mt-5 border-top">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">Fiat 500</h5>
                         <a href="" class="btn btn-warning">rent now</a>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card">
-                    <img src="./assets/cars/category_7places/mb-v.png" class="card-img-top" alt="...">
+                    <img src="./assets/cars/category_ve/jaguar.png" class="card-img-top" alt="...">
                     <div class="card-body mt-5 border-top">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">jaguar</h5>
                         <a href="" class="btn btn-warning">rent now</a>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card">
-                    <img src="./assets/cars/category_7places/peugeot-5008.png" class="card-img-top" alt="...">
+                    <img src="./assets/cars/category_ve/skoda.png" class="card-img-top" alt="...">
                     <div class="card-body mt-5 border-top">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">skoda</h5>
+                        <a href="" class="btn btn-warning">rent now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="./assets/cars/category_ve/smart1.png" class="card-img-top" alt="...">
+                    <div class="card-body mt-5 border-top">
+                        <h5 class="card-title">smart 1</h5>
+                        <a href="" class="btn btn-warning">rent now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="./assets/cars/category_ve/smart2.png" class="card-img-top" alt="...">
+                    <div class="card-body mt-5 border-top">
+                        <h5 class="card-title">smart 2</h5>
                         <a href="" class="btn btn-warning">rent now</a>
                     </div>
                 </div>
@@ -425,3 +496,8 @@
 </body>
 
 </html>
+<?php
+    $type = $_GET["type"];
+    echo '<script> document.getElementById("'.$type.'").style.display = "block"; </script>';
+
+?>

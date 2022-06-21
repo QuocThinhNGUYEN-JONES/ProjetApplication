@@ -221,12 +221,12 @@
                                     </div>
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="email">Email address *</label>
-                                        <input type="text" id="email" name="email" class="form-control form-control-lg" required />
+                                        <input type="email" id="email" name="email" class="form-control form-control-lg" required />
 
                                     </div>
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="password">Password *</label>
-                                        <input type="text" id="mdp" name="mdp" class="form-control form-control-lg" required/>
+                                        <input type="password" id="mdp" name="mdp" class="form-control form-control-lg" required/>
 
                                     </div>
                                     <div class="d-flex justify-content-end pt-3">

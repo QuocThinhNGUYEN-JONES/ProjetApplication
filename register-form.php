@@ -2,7 +2,7 @@
      session_start();
      require_once 'connexiondb.php'; // Fichier PHP contenant la connexion à votre BDD
  
-    if (isset($_SESSION['login'])){
+    if (isset($_SESSION['email'])){
         header('Location: my-account.php');
         exit();
     }

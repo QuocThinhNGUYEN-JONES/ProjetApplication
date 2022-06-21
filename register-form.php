@@ -30,7 +30,8 @@
             $num_etudiant = valid_donnees($_POST['student-card-number']); // On récupère le numéro de carte étudiant
         }
         if (isset($_POST['mdp'])){
-            $mdp = valid_donnees($_POST['mdp']);       // On récupère le mot de passe
+            $mdp = valid_donnees($_POST['mdp']);
+            $hash_mdp = password_hash($mdp,PASSWORD_DEFAULT);                            // On récupère le mot de passe
         }
   
  
@@ -49,15 +50,15 @@
             $valid = false;
         }
         /*else{
-            $query = "SELECT card number FROM users WHERE card number = ? limit 1";
+            $query = "SELECT card number,login FROM users WHERE card number =? AND login =? limit 1";
             $stmt = $conn->prepare($query);
-            $stmt->execute(array($num_etudiant));
+            $stmt->execute(array($num_etudiant,$mail));
             $data = $stmt->fetch();
             $row = $stmt->rowCount();
  
             if ($row > 0){
                 $valid = false;
-                $err_etu = "Ce numero de carte existe déjà";
+                $err_msg = "Ce numero de carte étudiante ou cette adresse mail existent déjà";
             }
         }*/
 
@@ -81,23 +82,6 @@
             $valid = false;
             $er_mail = "Le mail n'est pas valide";
         }
-        /*else{
-            // Verif si le mail est deja utilise
-            
-            //$req_mail = $conn->query("SELECT login FROM users WHERE login = $mail"); 
-            //$req_mail = $req_mail->fetch();
-            
-            $query = "SELECT login FROM users WHERE login = ? limit 1";
-            $stmt = $conn->prepare($query);
-            $stmt->execute(array($mail));
-            $data = $stmt->fetch();
-            $row = $stmt->rowCount();
-            
-            if ($row > 0){
-                $valid = false;
-                $er_mail = "Ce mail existe déjà";
-            }
-        }*/
  
         // Verif mdp
         if(empty($mdp)) {
@@ -111,16 +95,16 @@
                 //$date_creation_compte = date('Y-m-d H:i:s');
     
                 try{
-                    $sql = ("INSERT INTO `users`(`login`, `password`, `name`, `last name`, `card number`, `address`, `phone`) VALUES ('$mail','$mdp','$prenom','$nom','$num_etudiant','$adresse','$phone') ");
+                    $sql = ("INSERT INTO `users`(`login`, `password`, `name`, `last name`, `card number`, `address`, `phone`) VALUES ('$mail','$hash_mdp','$prenom','$nom','$num_etudiant','$adresse','$phone') ");
                     $st = $conn->prepare($sql);
                     $st->execute();
                 }
                 catch(PDOException $e){
-                    echo "Erreur : " . $e->getMessage();
+                    $err_msg = "Erreur lors de l'inscription";
                     exit();
                 }
     
-                header('Location: login-form.php');
+                header('Location: login-form-temp.php');
                 exit;
             }     
     }
@@ -227,7 +211,10 @@
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="password">Password *</label>
                                         <input type="password" id="mdp" name="mdp" class="form-control form-control-lg" required/>
-
+                                        <p><?php if(isset($err_msg)){
+                                            echo($err_msg);
+                                            } 
+                                            ?></p>
                                     </div>
                                     <div class="d-flex justify-content-end pt-3">
                                         <a href="./login-form.php"><button type="button" class="btn btn-light btn-lg">Login</button></a>

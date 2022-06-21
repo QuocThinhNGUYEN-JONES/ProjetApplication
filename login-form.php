@@ -14,7 +14,7 @@
      $stmt->execute(array($email,$password));
      $data = $stmt->fetch();
      $row = $stmt->rowCount();
-
+    
      // Si > à 0 alors l'utilisateur existe
      
      if($row > 0)

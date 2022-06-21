@@ -16,7 +16,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top " id="mainNavbar">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <h2 class="" id="logo-insa">INSA'CAR</h2>
+                <h2 class="logo-insa">INSA'CAR</h2>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mob-navbar" aria-label="Toggle">
           <span class="navbar-toggler-icon"></span>
@@ -71,7 +71,7 @@
             <div class="container ">
                 <div class="jumbotron d-flex mx-0 my-0 justify-content-end align-items-center h-100">
                     <div class="container-fluid pb-0 ms-1 pt-5" id="banner-caption">
-                    <blockquote class="col-md-12 fs-1 fw-bolder">WITH INSA'CAR</blockquote>
+                    <blockquote class="col-md-12 fs-1 fw-bolder">WITH <span class="logo-insa">INSA'CAR</span></blockquote>
                         <blockquote class="col-md-12 fs-1 fw-bolder">STOP DREAMING, JUST DRIVE!</blockquote>
                         <a href="#offer-gallery" id="see-our-offer" class="my-0">
                             <button class="btn btn-outline-info fw-bold text-white w-100 text-nowrap" type="button">SEE OUR OFFER</button>

@@ -1,7 +1,8 @@
 RewriteEngine on
 
+RewriteBase /ProjetApplication
 RewriteCond %{REQUEST_FILENAME} !-d
 
 RewriteCond %{REQUEST_FILENAME} !-f
 
-RewriteRule ^([^\.]+)$ $1.php [NC,L]
+RewriteRule ^(.+)$ index.php?uri=$1 [QSA,L]

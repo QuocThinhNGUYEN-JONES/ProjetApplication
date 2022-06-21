@@ -1,7 +1,7 @@
 <?php
- session_start();
- require_once 'connexiondb.php'; // On inclut la connexion à la base de données
- if(!empty($_POST['username']) && !empty($_POST['password']) ) // Si il existe les champs email, password et qu'il sont pas vident
+session_start();
+require_once 'connexiondb.php'; // On inclut la connexion à la base de données
+if (!empty($_POST['username']) && !empty($_POST['password'])) // Si il existe les champs email, password et qu'il sont pas vident
 {
      // Patch XSS
      $email = valid_donnees($_POST['username']); 
@@ -44,6 +44,7 @@ function valid_donnees($donnees){
 }
 ?>
 
+ ?>
 
 
 <!DOCTYPE html>
@@ -60,7 +61,8 @@ function valid_donnees($donnees){
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
         @import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Vollkorn:ital,wght@0,600;1,500&display=swap");
-         :root {
+
+        :root {
             --pure-white: #fff;
             --black: #171613;
             --light-black: #171613de;
@@ -71,7 +73,7 @@ function valid_donnees($donnees){
             --carousel-bottom: #485461;
             --type-body: Open Sans, Helvetica, Arial, sans-serif;
         }
-        
+
         body {
             font-family: var(--type-body);
             background-color: var(--light-black);
@@ -79,14 +81,14 @@ function valid_donnees($donnees){
             padding: 0;
             margin: 0;
         }
-        
+
         .background-image {
             background-image: url(./assets/car-model.jpg);
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
         }
-        
+
         @media(max-width: 991px) {
             .background-image {
                 margin: 0;
@@ -110,33 +112,33 @@ function valid_donnees($donnees){
                                     <div class="text-center ">
                                         <h4 class="mt-1 mb-5 pb-1 fw-bold">INSA CAR LOGIN</h4>
                                     </div>
-                                    
 
-                                    <form name = "fo"  action = "login-form.php" class="fw-bold" method=POST>
+
+                                    <form name="fo" action="login-form.php" class="fw-bold" method=POST>
                                         <p class="h5 pb-3 ">Please login to your account</p>
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="username">Username</label>
-                                            <input type="email" name = "username" id="username" class="form-control " placeholder="Email address" required="required"/>
+                                            <input type="email" name="username" id="username" class="form-control" placeholder="Email address" required="required" />
                                         </div>
 
                                         <div class="form-outline mb-4 ">
                                             <label class="form-label" for="password">Password</label>
-                                            <input type="password" name = "password" id="password" class="form-control required="required"" />
+                                            <input type="password" name="password" id="password" class="form-control" required="required" />
                                         </div>
 
                                         <div class="d-flex flex-column text-center pt-1 mb-5 pb-1 ">
-                                            <button class="btn btn-warning btn-block fa-lg mb-3 " name = "submit" type="submit">
-                                              Log in
+                                            <button class="btn btn-warning btn-block fa-lg mb-3 " name="submit" type="submit">
+                                                Log in
                                             </button>
                                             <a class="text-muted" href="#!">Forgot password?</a>
                                         </div>
 
-                                        <div class="d-flex align-items-center justify-content-center pb-4 ">
+                                        <div class="d-flex align-items-center justify-content-center pb-4">
                                             <p class="mb-0 me-2 ">Don't have an account?</p>
                                             <a href="./register-form.html">
-                                                <button type="button" class="btn btn-outline-danger fw-bold ">
-                                                <a href="register-form.php">Create New</a> 
-                                              </button>
+                                                <button type="button" class="btn btn-outline-danger fw-bold">
+                                                    Create New
+                                                </button>
                                             </a>
                                         </div>
                                     </form>
@@ -165,5 +167,3 @@ function valid_donnees($donnees){
 </body>
 
 </html>
-
-

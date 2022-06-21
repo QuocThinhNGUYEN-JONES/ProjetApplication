@@ -81,10 +81,10 @@
                     <img src="./assets/cars/category_7places/bmw-2.png" class="card-img-top" alt="bmw">
                     <div class="card-body mt-5 border-top ">
                         <h5 class="card-title">BMW</h5>
-                        <form action="/payment">
-                            
+                        <form action="/payment" mothod="POST">
+                            <a href="/payment?" class="btn btn-warning">rent now</a>
                         </form>
-                        <a href="/payment?" class="btn btn-warning">rent now</a>
+                        
                     </div>
                 </div>
             </div>

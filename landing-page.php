@@ -118,7 +118,7 @@
                                         <img src="./assets/berline-car.png" class="img-fluid" alt="berline car" />
                                     </div>
                                     <div class="card-img-more">
-                                        <a href="#" class="car-info-link">
+                                        <a href="/catalogue?type=suv" class="car-info-link">
                                             <button class="btn btn-outline-light fw-bold text-nowrap text-uppercase">rent a sedan</button>
                                         </a>
                                     </div>
@@ -160,7 +160,7 @@
                                         <img src="./assets/car7+.png" class="img-fluid " alt="more than 7 seats car" />
                                     </div>
                                     <div class="card-img-more">
-                                        <a href="#" class="car-info-link">
+                                        <a href="./catalogue?type=suv" class="car-info-link">
                                             <button class="btn btn-outline-light fw-bold text-nowrap text-uppercase">rent a 7-seater or +</button>
                                         </a>
                                     </div>

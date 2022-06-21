@@ -1,7 +1,4 @@
 <?php
-
-
-
     class Route {
 
         private function simpleRoute($file, $route){
@@ -94,9 +91,12 @@ $route = new Route();
 
 $route->add("home", "landing-page.php");
 
-// $route->add("login", "login-form.php");
-// $route->add("register", "register-form.php");
-// $route->add("account", "myaccount.php");
+$route->add("login", "login-form.php");
+$route->add("register", "register-form.php");
+$route->add("profile", "myaccount.php");
+$route->add("catalogue", "catalogue.php");
+$route->add("profile-edit", "account-parameter.php");
+
 
 //$route->notFound("404.php");
 

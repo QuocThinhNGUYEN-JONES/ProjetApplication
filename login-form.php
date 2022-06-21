@@ -4,8 +4,8 @@
  if(!empty($_POST['username']) && !empty($_POST['password']) ) // Si il existe les champs email, password et qu'il sont pas vident
 {
      // Patch XSS
-     $email = htmlspecialchars($_POST['username']); 
-     $password = htmlspecialchars($_POST['password']);
+     $email = valid_donnees($_POST['username']); 
+     $password = valid_donnees($_POST['password']);
      
      $email = strtolower($email); // email transformé en minuscule
      
@@ -36,8 +36,13 @@
                  }
      }
 }
-
- ?>
+function valid_donnees($donnees){
+    $donnees = trim($donnees);
+    $donnees = stripslashes($donnees);
+    $donnees = htmlspecialchars($donnees);
+    return $donnees;
+}
+?>
 
 
 

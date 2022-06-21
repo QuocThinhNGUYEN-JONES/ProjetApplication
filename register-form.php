@@ -1,36 +1,36 @@
 <?php
      session_start();
-     require('connexiondb.php'); // Fichier PHP contenant la connexion à votre BDD
+     require_once 'connexiondb.php'; // Fichier PHP contenant la connexion à votre BDD
  
-    if (isset($_SESSION['id'])){
-        //header('Location: combine.html');
+    if (isset($_SESSION['login'])){
+        header('Location: my-account.php');
         exit();
     }
     
     if(!empty($_POST))
     {
         $valid = true;
- 
+
         if (isset($_POST['first-name'])){
-            $prenom = $_POST['first-name']; // on récupère le prénom
+            $prenom = valid_donnees($_POST['first-name']); // on récupère le prénom
         }
         if (isset($_POST['last-name'])){
-            $nom = $_POST['last-name']; // On récupère le nom
+            $nom = valid_donnees($_POST['last-name']); // On récupère le nom
         }
         if (isset($_POST['email'])){
-            $mail = $_POST['email']; // On récupère le mail
+            $mail = valid_donnees($_POST['email']); // On récupère le mail
         }
         if (isset($_POST['telephone-number'])){
-            $phone = $_POST['telephone-number']; // On récupère le telephone
+            $phone = valid_donnees($_POST['telephone-number']); // On récupère le telephone
         }
         if (isset($_POST['address'])){
-            $adresse = $_POST['address']; // On récupère l'adresse
+            $adresse = valid_donnees($_POST['address']); // On récupère l'adresse
         }
         if (isset($_POST['student-card-number'])){
-            $num_etudiant = $_POST['student-card-number']; // On récupère le numéro de carte étudiant
+            $num_etudiant = valid_donnees($_POST['student-card-number']); // On récupère le numéro de carte étudiant
         }
         if (isset($_POST['mdp'])){
-            $mdp = $_POST['mdp'];       // On récupère le mot de passe
+            $mdp = valid_donnees($_POST['mdp']);       // On récupère le mot de passe
         }
   
  
@@ -48,16 +48,18 @@
         if(empty($num_etudiant)){
             $valid = false;
         }
-        else{
-            $req_etu = $conn->query("SELECT card number FROM users WHERE card number = ?",
-            array($mail)); 
-            $req_etu = $req_etu->fetch();
+        /*else{
+            $query = "SELECT card number FROM users WHERE card number = ? limit 1";
+            $stmt = $conn->prepare($query);
+            $stmt->execute(array($num_etudiant));
+            $data = $stmt->fetch();
+            $row = $stmt->rowCount();
  
-            if ($req_etu['card number'] <> ""){
+            if ($row > 0){
                 $valid = false;
-                $er_mail = "Ce mail existe déjà";
+                $err_etu = "Ce numero de carte existe déjà";
             }
-        }
+        }*/
 
         // Vérification de l'email
         if(empty($mail)){
@@ -79,17 +81,23 @@
             $valid = false;
             $er_mail = "Le mail n'est pas valide";
         }
-        else{
+        /*else{
             // Verif si le mail est deja utilise
-            $req_mail = $conn->query("SELECT mail FROM utilisateur WHERE mail = ?",
-            array($mail)); 
-            $req_mail = $req_mail->fetch();
- 
-            if ($req_mail['mail'] <> ""){
+            
+            //$req_mail = $conn->query("SELECT login FROM users WHERE login = $mail"); 
+            //$req_mail = $req_mail->fetch();
+            
+            $query = "SELECT login FROM users WHERE login = ? limit 1";
+            $stmt = $conn->prepare($query);
+            $stmt->execute(array($mail));
+            $data = $stmt->fetch();
+            $row = $stmt->rowCount();
+            
+            if ($row > 0){
                 $valid = false;
                 $er_mail = "Ce mail existe déjà";
             }
-        }
+        }*/
  
         // Verif mdp
         if(empty($mdp)) {
@@ -102,26 +110,10 @@
                 //$mdp = crypt($mdp, "$6$rounds=5000$macleapersonnaliseretagardersecret$");
                 //$date_creation_compte = date('Y-m-d H:i:s');
     
-    
-                $servername = 'localhost';
-                $username = 'root';
-                $password = '';
-                //On établit la connexion
-                $conn = new mysqli($servername, $username, $password);
-                //On vérifie la connexion
-                if($conn->connect_error){
-                    die('Erreur : ' .$conn->connect_error);
-                }
-    
-    
                 try{
-                    $conn = new PDO("mysql:host=$servername;dbname=insacar", $username, $password);
-                    //On définit le mode d'erreur de PDO sur Exception
-                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                     $sql = ("INSERT INTO `users`(`login`, `password`, `name`, `last name`, `card number`, `address`, `phone`) VALUES ('$mail','$mdp','$prenom','$nom','$num_etudiant','$adresse','$phone') ");
                     $st = $conn->prepare($sql);
                     $st->execute();
-
                 }
                 catch(PDOException $e){
                     echo "Erreur : " . $e->getMessage();
@@ -130,11 +122,15 @@
     
                 header('Location: login-form.php');
                 exit;
-            }
-            
+            }     
     }
         
-    
+    function valid_donnees($donnees){
+        $donnees = trim($donnees);
+        $donnees = stripslashes($donnees);
+        $donnees = htmlspecialchars($donnees);
+        return $donnees;
+    }
 ?>
 
 
@@ -198,18 +194,15 @@
                                             <div class="form-outline">
                                                 <label class="form-label" for="first-name">First name *</label>
                                                 <input type="text" id="first-name" name="first-name" class="form-control form-control-lg" />
-
                                             </div>
                                         </div>
                                         <div class="col-md-6 mb-4">
                                             <div class="form-outline">
                                                 <label class="form-label" for="last-name">Last name *</label>
                                                 <input type="text" id="last-name" name="last-name" class="form-control form-control-lg" />
-
                                             </div>
                                         </div>
                                     </div>
-
 
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="address">Address</label>
@@ -218,33 +211,28 @@
                                     </div>
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="student-number">Student card *</label>
-                                        <input type="text" id="student-card-number" name="student-number" class="form-control form-control-lg" />
+                                        <input type="text" id="student-card-number" name="student-card-number" class="form-control form-control-lg" />
 
                                     </div>
-
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="telephone-number">Telephone number *</label>
                                         <input type="text" id="telephone-number" name="telephone-number" class="form-control form-control-lg" />
 
                                     </div>
-
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="email">Email address *</label>
                                         <input type="text" id="email" name="email" class="form-control form-control-lg" />
 
                                     </div>
-
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="password">Password *</label>
-                                        <input type="text" id="mdp" name="password" class="form-control form-control-lg" />
+                                        <input type="text" id="mdp" name="mdp" class="form-control form-control-lg" />
 
                                     </div>
-
                                     <div class="d-flex justify-content-end pt-3">
                                         <a href="./login-form.php"><button type="button" class="btn btn-light btn-lg">Login</button></a>
                                         <button type="submit" class="btn btn-warning btn-lg ms-2">Register</button>
                                     </div>
-
                                 </div>
                             </div>
                         </div>

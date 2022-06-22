@@ -96,6 +96,10 @@ $route->add("register", "register-form.php");
 $route->add("profile", "myaccount.php");
 $route->add("catalogue", "catalogue.php");
 $route->add("profile-edit", "account-parameter.php");
+$route->add("order", "payment.php");
+$route->add("test", "test.php");
+
+
 
 
 //$route->notFound("404.php");

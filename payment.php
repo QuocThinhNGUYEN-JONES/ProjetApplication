@@ -2,37 +2,21 @@
 require_once 'connexiondb.php';
 logged_only();
 if (isset($_GET['car']))
-        {
-            $car_name = $_GET['car'];
-        }
-if(isset($_SESSION['car']))
 {
-    //echo "test valide" ;
-    
-        
-    
+    $car_name = $_GET['car'];
     $query = "SELECT * FROM car WHERE model = ? limit 1" ;
     $stmt = $conn->prepare($query);
     $stmt->execute(array($car_name));
     $data = $stmt->fetch();
     
-    $ppd = $data['price'];
+    $ppd = $data['price']."$";
     $marque = $data['brand']; 
     $model = $data['model'];
-
-    //$year = $data['year'];
-    //$kilometrage = $data['distance'];
-    //var_dump($model) ;
-    //var_dump($_SESSION['car']);
-    //var_dump($_GET['car']);
-    //echo $brand ;
-    //echo $ppd;
-
+    $year = $data['year'];
+    $kilometrage = "5000 Km";
 }
-/*else {
-    echo "test non valide" ;
-    var_dump($_SESSION);
-}*/
+
+
 
 
 
@@ -148,7 +132,7 @@ function logged_only(){
                                         <div class="anchor" id="info"></div>
                                         <h4>Information</h4>
                                                 <div class="col-md-4">
-                                                <p>ICI RECUPERER LE TEXTE DE DESCRIPTION DU VEHICULE CHOISI (DEPUIS DB)</p>
+                                                <p>Equipements et options : ABS, Antipatinage (ASR), Airbags frontaux + latéraux, Projecteurs Xénon ou bi-Xénon, Contrôle de stabilité (ESP), Régulateur de vitesse, Allumage automatique des feux, Rétroviseurs électriques, Suspension sport, Direction assistée, Banquette AR 1/3 - 2/3, Vitres électriques, Volant multifonctions, Siégés sport cuir, Climatisation automatique multizones, Fermeture centralisée, Vitres teintées. </p>
                                                 </div>  
 
                                                 <div class="col-md-4" id="ads">

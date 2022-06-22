@@ -1,12 +1,14 @@
 <?php 
 logged_only();
-if(isset($_SESSION['email']) && isset(valid_donnees($_GET['car']))){
+
+if(isset($_SESSION['email']) && !empty(($_GET['car']))){
     $_SESSION['car'] = valid_donnees($_GET['car']);
 }
    if(isset($_SESSION["email"]))
    {
         $firstname = $_SESSION["name"];
         $lastname = $_SESSION["last name"];
+        $_SESSION['car'] = valid_donnees($_GET['car']);
     }
 
 function logged_only(){

@@ -1,13 +1,17 @@
 <?php
 require_once 'connexiondb.php';
 logged_only();
-if(isset($_SESSION['car'])){
-    $car_name = $_SESSION['car']
+
+if(isset($_SESSION['car']))
+{
+    echo "test valide" ;
+    $car_name = $_SESSION['car'];
     
-    $query = "SELECT * FROM car WHERE model=? limit 1";
+    $query = "SELECT * FROM car WHERE model = ? limit 1" ;
     $stmt = $conn->prepare($query);
     $stmt->execute(array($car_name));
     $data = $stmt->fetch();
+    var_dump($data);
     $ppd = $data['price'];
     $marque = $data['brand']; 
     $model = $data['model'];
@@ -15,6 +19,11 @@ if(isset($_SESSION['car'])){
     $kilometrage = $data['distance'];
 
 }
+else {
+    echo "test non valide" ;
+    var_dump($_SESSION);
+}
+
 
 
 
@@ -137,16 +146,17 @@ function logged_only(){
                                                 <div class="card-image">
                                                         <span class="card-notify-badge">Low KMS</span>
                                                         <span class="card-notify-year"><?php if(!empty($year)){echo($year);} ?></span>
-                                                        <?php echo('<img class="img-fluid" src="./cars_total/'.$car_image.'" alt="Alternate Text" />'); ?>
+                                                        <?php echo('<img class="img-fluid" src="./cars_total/'.$car_name.'" alt="Alternate Text" />'); ?>
                                                 </div>
                                                 <div class="card-image-overlay m-auto">
-                                                        <span class="card-detail-badge"><?php if(!empty($price)){echo($price)} ?></span>
-                                                        <span class="card-detail-badge"><?php if(!empty($model)){echo($model)} ?></span>
-                                                        <span class="card-detail-badge"><?php if(!empty($kilometrage)){echo($kilometrage)} ?></span>
+                                                        <span class="card-detail-badge"><?php if(!empty($price))
+                                                        {echo($price);} ?></span>
+                                                        <span class="card-detail-badge"><?php if(!empty($model)){echo($model);} ?></span>
+                                                        <span class="card-detail-badge"><?php if(!empty($kilometrage)){echo($kilometrage);} ?></span>
                                                 </div>
                                                 <div class="card-body text-center">
                                                         <div class="ad-title m-auto">
-                                                        <h5><?php if(!empty($marque)){echo($marque)} ?></h5>
+                                                        <h5><?php if(!empty($marque)){echo($marque);} ?></h5>
                                                         </div>
                                                 </div>
                                                 </div>

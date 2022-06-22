@@ -111,21 +111,18 @@
                 }
     
     
-                try{
+                
                     $conn = new PDO("mysql:host=$servername;dbname=insacar", $username, $password);
                     //On définit le mode d'erreur de PDO sur Exception
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    $sql = ("INSERT INTO `users`(`login`, `password`, `name`, `last name`, `card number`, `address`, `phone`) VALUES ('$mail','$mdp','$prenom','$nom','$num_etudiant','$adresse','$phone') ");
+                    $sql = ("INSERT INTO `users`(`login`, `password`, `name`, `last name`, `card number`, `address`, `phone`) VALUES ('$mail','$hash_mdp','$prenom','$nom','$num_etudiant','$adresse','$phone') ");
                     $st = $conn->prepare($sql);
                     $st->execute();
 
-                }
-                catch(PDOException $e){
-                    echo "Erreur : " . $e->getMessage();
-                    exit();
-                }
+                
+               
     
-                header('Location: login-form.php');
+                header('Location: login-form-temp.php');
                 exit;
             }
             
@@ -239,7 +236,7 @@
                                             ?></p>
                                     </div>
                                     <div class="d-flex justify-content-end pt-3">
-                                        <a href="./login-form.php"><button type="button" class="btn btn-light btn-lg">Login</button></a>
+                                        <a href="./login-form-temp.php"><button type="button" class="btn btn-light btn-lg">Login</button></a>
                                         <button type="submit" class="btn btn-warning btn-lg ms-2">Register</button>
                                     </div>
                                 </div>

@@ -137,8 +137,8 @@
                                         <img src="./assets/berline-car.png" class="img-fluid" alt="berline car" />
                                     </div>
                                     <div class="card-img-more">
-                                        <a href="#" class="car-info-link">
-                                            <button class="btn btn-outline-light fw-bold text-nowrap">LOUER UNE BERLINE</button>
+                                        <a href="./catalogue.php?type=suv" class="car-info-link">
+                                            <button class="btn btn-outline-light fw-bold text-nowrap text-uppercase">Rent a sedan</button>
                                         </a>
                                     </div>
                                 </div>
@@ -151,8 +151,8 @@
                                         <img src="./assets/cabriolet.png" class="img-fluid" alt="cabriolet car" />
                                     </div>
                                     <div class="card-img-more">
-                                        <a href="#" class="car-info-link">
-                                            <button class="btn btn-outline-light fw-bold text-nowrap">LOUER UN CABRIOLET</button>
+                                        <a href="./catalogue.php?type=cabriolet" class="car-info-link">
+                                            <button class="btn btn-outline-light fw-bold text-nowrap text-uppercase">Rent a convertible</button>
                                         </a>
                                     </div>
                                 </div>
@@ -165,8 +165,8 @@
                                         <img src="./assets/utilitaire-car.png" class="img-fluid" alt="utilitaire car" />
                                     </div>
                                     <div class="card-img-more">
-                                        <a href="#" class="car-info-link">
-                                            <button class="btn btn-outline-light fw-bold text-nowrap">LOCATION UTILITAIRE</button>
+                                        <a href="./catalogue.php?type=utilitaire" class="car-info-link">
+                                            <button class="btn btn-outline-light fw-bold text-nowrap text-uppercase">Utility rental</button>
                                         </a>
                                     </div>
                                 </div>
@@ -179,8 +179,8 @@
                                         <img src="./assets/car7+.png" class="img-fluid " alt="more than 7 seats car" />
                                     </div>
                                     <div class="card-img-more">
-                                        <a href="#" class="car-info-link">
-                                            <button class="btn btn-outline-light fw-bold text-nowrap">LOUER UN 7 PLACES OU +</button>
+                                        <a href="./catalogue.php?type=7places" class="car-info-link">
+                                            <button class="btn btn-outline-light fw-bold text-nowrap text-uppercase">Rent a 7-seater or +</button>
                                         </a>
                                     </div>
                                 </div>
@@ -194,8 +194,8 @@
                                     </div>
 
                                     <div class="card-img-more">
-                                        <a href="#" class="car-info-link">
-                                            <button class="btn btn-outline-light fw-bold text-nowrap">LOUER UNE VOITURE DE LUXE</button>
+                                        <a href="./catalogue.php?type=luxe" class="car-info-link">
+                                            <button class="btn btn-outline-light fw-bold text-nowrap text-uppercase">Rent a luxury car</button>
                                         </a>
                                     </div>
                                 </div>
@@ -209,8 +209,8 @@
                                     </div>
 
                                     <div class="card-img-more">
-                                        <a href="#" class="car-info-link">
-                                            <button class="btn btn-outline-light fw-bold text-nowrap">LOUER UN SUV</button>
+                                        <a href="./catalogue.php?type=suv" class="car-info-link">
+                                            <button class="btn btn-outline-light fw-bold text-nowrap text-uppercase fs-lg-4">Rent an suv</button>
                                         </a>
                                     </div>
                                 </div>
@@ -224,8 +224,8 @@
                                     </div>
 
                                     <div class="card-img-more">
-                                        <a href="#" class="car-info-link">
-                                            <button class="btn btn-outline-light fw-bold text-nowrap">LOUER UNE VOITURE ÉLECTRIQUE </button>
+                                        <a href="/catalogue.php?type=ve" class="car-info-link">
+                                            <button class="btn btn-outline-light fw-bold text-nowrap text-uppercase">Rent an electric car</button>
                                         </a>
                                     </div>
                                 </div>

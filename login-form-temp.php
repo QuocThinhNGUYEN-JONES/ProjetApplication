@@ -117,7 +117,7 @@ if(!empty($_POST['username']) && !empty($_POST['password']))
         // Si le pseudo n'existe pas
         else
         {
-            $msg_err = 'Pseudonyme incorrect';
+            $msg_err = 'Mot de passe ou login incorrect ! ';
         }
 
 

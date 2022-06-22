@@ -1,6 +1,7 @@
 <?php
 require_once 'connexiondb.php';
 logged_only();
+
 if (isset($_GET['car']))
 {
     $car_name = $_GET['car'];
@@ -9,7 +10,7 @@ if (isset($_GET['car']))
     $stmt->execute(array($car_name));
     $data = $stmt->fetch();
     
-    $ppd = $data['price']."$";
+    $ppd = $data['price'];
     $marque = $data['brand']; 
     $model = $data['model'];
     $year = $data['year'];
@@ -180,7 +181,7 @@ function logged_only(){
                                         <br>
                                         <p>Total : <div id="display" disabled></div>
                                         <br/><br/>
-                                            <form action="/checkout.php" method="POST">
+                                            <form action="./checkout.php" method="POST">
                                                 <input type="hidden" name="price" value="<?php echo $ppd; ?>">
                                                 <input type="hidden" id="dd" name="daydifference" value="">
                                                 <button type="submit" id="checkout-button" disabled>Checkout</button>

@@ -78,7 +78,8 @@
         }
     
         function notFound($file){
-            include($file);
+            include($file); 
+            //redirecting to home to avoid bruteforce tree
             exit();
         }
     }
@@ -98,7 +99,7 @@ $route->add("catalogue", "catalogue.php");
 $route->add("profile-edit", "account-parameter.php");
 
 
-//$route->notFound("404.php");
+$route->notFound("404.php");
 
 ?>
 <h1>index</h1>

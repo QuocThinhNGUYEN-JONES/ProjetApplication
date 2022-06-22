@@ -5,7 +5,12 @@
 </head>
 <body>
   <section>
-    <p>Forgot to add something to your cart? Shop around then come back to pay!</p>
+    <p>You've canceled your order. Shop around then come back to pay! Redirection in 5 seconds...</p>
+    <script>
+        setTimeout(function () {
+          window.open('https://localhost/catalogue');
+        }, 5000);
+  </script>
   </section>
 </body>
 </html>

@@ -1,4 +1,27 @@
-// 
+<?php 
+logged_only();
+if(isset($_SESSION['email']) && isset(valid_donnees($_GET['car']))){
+    $_SESSION['car'] = valid_donnees($_GET['car']);
+}
+
+function logged_only(){
+    if(session_status() == PHP_SESSION_NONE){
+        session_start();
+    }
+    if(!isset($_SESSION['email'])){
+        header('Location: login-form-temp.php');
+        exit();
+    }
+}
+
+function valid_donnees($donnees){
+    $donnees = trim($donnees);
+    $donnees = stripslashes($donnees);
+    $donnees = htmlspecialchars($donnees);
+    return $donnees;
+}
+
+?> 
 
 <!DOCTYPE html>
 <html lang="en">

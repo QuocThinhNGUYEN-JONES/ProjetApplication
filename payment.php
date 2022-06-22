@@ -1,7 +1,32 @@
 <?php
 require_once 'connexiondb.php';
-$ppd=30;
-//$ppd=$_POST['price'];
+logged_only();
+if(isset($_SESSION['car'])){
+    $car_name = $_SESSION['car']
+    
+    $query = "SELECT * FROM car WHERE model=? limit 1";
+    $stmt = $conn->prepare($query);
+    $stmt->execute(array($car_name));
+    $data = $stmt->fetch();
+    $ppd = $data['price'];
+    $marque = $data['brand']; 
+    $model = $data['model'];
+    $year = $data['year'];
+    $kilometrage = $data['distance'];
+
+}
+
+
+
+function logged_only(){
+    if(session_status() == PHP_SESSION_NONE){
+        session_start();
+    }
+    if(!isset($_SESSION['email'])){
+        header('Location: login-form-temp.php');
+        exit();
+    }
+}
 ?>
 
 <!DOCTYPE html> 
@@ -111,17 +136,17 @@ $ppd=30;
                                                 <div class="card rounded">
                                                 <div class="card-image">
                                                         <span class="card-notify-badge">Low KMS</span>
-                                                        <span class="card-notify-year">2018</span>
-                                                        <img class="img-fluid" src="https://imageonthefly.autodatadirect.com/images/?USER=eDealer&PW=edealer872&IMG=USC80HOC011A021001.jpg&width=440&height=262" alt="Alternate Text" />
+                                                        <span class="card-notify-year"><?php if(!empty($year)){echo($year);} ?></span>
+                                                        <?php echo('<img class="img-fluid" src="./cars_total/'.$car_image.'" alt="Alternate Text" />'); ?>
                                                 </div>
                                                 <div class="card-image-overlay m-auto">
-                                                        <span class="card-detail-badge">20€/jour</span>
-                                                        <span class="card-detail-badge">Honda Accord LX</span>
-                                                        <span class="card-detail-badge">13000 Kms</span>
+                                                        <span class="card-detail-badge"><?php if(!empty($price)){echo($price)} ?></span>
+                                                        <span class="card-detail-badge"><?php if(!empty($model)){echo($model)} ?></span>
+                                                        <span class="card-detail-badge"><?php if(!empty($kilometrage)){echo($kilometrage)} ?></span>
                                                 </div>
                                                 <div class="card-body text-center">
                                                         <div class="ad-title m-auto">
-                                                        <h5>Honda Accord LX</h5>
+                                                        <h5><?php if(!empty($marque)){echo($marque)} ?></h5>
                                                         </div>
                                                 </div>
                                                 </div>

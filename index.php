@@ -93,7 +93,7 @@ $route->add("home", "landing-page.php");
 
 $route->add("login", "login-form.php");
 $route->add("register", "register-form.php");
-$route->add("profile", "my-account.php");
+$route->add("profile", "myaccount.php");
 $route->add("catalogue", "catalogue.php");
 $route->add("profile-edit", "account-parameter.php");
 

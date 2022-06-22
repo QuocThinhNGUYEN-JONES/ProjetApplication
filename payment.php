@@ -12,7 +12,7 @@ $ppd=30;
                 <link  rel="stylesheet" href="css/style_inner_payment.css">
                 <script  src="https://js.stripe.com/v3/"></script>
                 <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
-
+                <link rel="shortcut icon" href="https://www.insa-centrevaldeloire.fr/sites/default/files/favicon_0.ico" type="image/vnd.microsoft.icon" />
                 <script type="text/javascript">
                 function daydiff()
                 {
@@ -69,7 +69,7 @@ $ppd=30;
         <body> 
         <div class="d-flex flex-column min-vh-100">
     <nav class="navbar navbar-expand-md sticky-to navbar-light bg-light pt-1">
-        <a class="navbar-brand" href="index" data-target="index:not(.show)" data-toggle="collapse" data-parent="#page-content">Home</a>
+        <a class="navbar-brand" href="home" data-target="index:not(.show)" data-toggle="collapse" data-parent="#page-content">Home</a>
         <div class="collapse navbar-collapse" id="navbar1">
             <ul class="navbar-nav">
                 <li class="nav-item">

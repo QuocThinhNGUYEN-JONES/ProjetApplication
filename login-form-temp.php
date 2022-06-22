@@ -70,7 +70,7 @@ if(!empty($_POST['username']) && !empty($_POST['password']))
                 $_SESSION['address'] = $data_verif['address'] ;
                 $_SESSION['phone'] = $data_verif['phone'] ;
                 $_SESSION['card number'] = $data_verif['card number'];
-                header('Location: ./my-account.php');
+                header('Location: ./profile');
            }
            // Si le mot de passe est faux
            else
@@ -237,7 +237,7 @@ function valid_donnees($donnees){
                                             <p class="mb-0 me-2 ">Don't have an account?</p>
                                             <a href="./register-form.html">
                                                 <button type="button" class="btn btn-outline-danger fw-bold ">
-                                                <a href="register-form.php">Create New</a> 
+                                                <a href="/register">Create New</a> 
                                               </button>
                                             </a>
                                         </div>

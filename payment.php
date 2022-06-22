@@ -1,14 +1,14 @@
 <?php
 require_once 'connexiondb.php';
 logged_only();
-
-if(isset($_SESSION['car']))
-{
-    //echo "test valide" ;
-    if (isset($_GET['car']))
+if (isset($_GET['car']))
         {
             $car_name = $_GET['car'];
         }
+if(isset($_SESSION['car']))
+{
+    //echo "test valide" ;
+    
         
     
     $query = "SELECT * FROM car WHERE model = ? limit 1" ;

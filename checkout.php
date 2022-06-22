@@ -1,4 +1,10 @@
 <?php
+
+if (empty($_POST['price']) || empty($_POST['daydifference'])) {
+  header('Location: https://localhost/order/cancel');
+}
+
+
 $price = (is_numeric($_POST['price']) ? (int)$_POST['price'] : 0);
 $daydiff = (is_numeric($_POST['daydifference']) ? (int)$_POST['daydifference'] : 0);
 
@@ -7,11 +13,11 @@ echo $daydiff;
 
 require 'vendor/autoload.php';
 // This is your test secret API key.
-\Stripe\Stripe::setApiKey('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');
+\Stripe\Stripe::setApiKey('sk_test_51LCg28Ic6AS6fjfljEPFs5wAWF0VGpbJBdskCIAZArj4GPr7SpNF5uIb6K4OWHBjLO9IB8XkomzRyGBQ3MXpJsaA00ZlY1cYAw');
 
 header('Content-Type: application/json');
 
-$YOUR_DOMAIN = 'http://localhost';
+$YOUR_DOMAIN = 'https://localhost';
 
 $session = \Stripe\Checkout\Session::create([
     'payment_method_types' => ['card'],
@@ -26,8 +32,8 @@ $session = \Stripe\Checkout\Session::create([
       'quantity' => 1,
     ]],
     'mode' => 'payment',
-  'success_url' => $YOUR_DOMAIN . '/success.html',
-  'cancel_url' => $YOUR_DOMAIN . '/cancel.html',
+  'success_url' => $YOUR_DOMAIN . '/order/success',
+  'cancel_url' => $YOUR_DOMAIN . '/order/cancel',
 ]);
 
 header("HTTP/1.1 303 See Other");

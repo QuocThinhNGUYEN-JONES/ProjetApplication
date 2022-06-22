@@ -1,16 +1,16 @@
 <?php
      session_start();
      require('connexiondb.php'); // Fichier PHP contenant la connexion à votre BDD
- 
+
     if (isset($_SESSION['id'])){
         //header('Location: combine.html');
         exit();
     }
-    
+
     if(!empty($_POST))
     {
         $valid = true;
- 
+
         if (isset($_POST['first-name'])){
             $prenom = $_POST['first-name']; // on récupère le prénom
         }
@@ -32,18 +32,18 @@
         if (isset($_POST['mdp'])){
             $mdp = $_POST['mdp'];       // On récupère le mot de passe
         }
-  
- 
+
+
         // Vérification du nom
         if(empty($nom)){
             $valid = false;
         }
- 
+
         // Vérification du prenom
         if(empty($prenom)){
             $valid = false;
         }
-        
+
         // Vérification du prenom
         if(empty($num_etudiant)){
             $valid = false;
@@ -62,8 +62,8 @@
             $valid = false;
         }
 
-            
- 
+
+
         // Vérif du format de l'email
         if(!preg_match("/^[a-z0-9\-_.]+@[a-z]+\.[a-z]{2,3}$/i", $mail)){
             $valid = false;
@@ -72,15 +72,15 @@
         /*else{
             // Verif si le mail est deja utilise
             $req_mail = $DB->query("SELECT mail FROM utilisateur WHERE mail = ?",
-            array($mail)); 
+            array($mail));
             $req_mail = $req_mail->fetch();
- 
+
             if ($req_mail['mail'] <> ""){
                 $valid = false;
                 $er_mail = "Ce mail existe déjà";
             }
         }*/
- 
+
         // Verif mdp
         if(empty($mdp)) {
             $valid = false;
@@ -91,8 +91,8 @@
             if($valid){
                 //$mdp = crypt($mdp, "$6$rounds=5000$macleapersonnaliseretagardersecret$");
                 //$date_creation_compte = date('Y-m-d H:i:s');
-    
-    
+
+
                 $servername = 'localhost';
                 $username = 'root';
                 $password = '';
@@ -102,8 +102,8 @@
                 if($conn->connect_error){
                     die('Erreur : ' .$conn->connect_error);
                 }
-    
-    
+
+
                 try{
                     $conn = new PDO("mysql:host=$servername;dbname=insacar", $username, $password);
                     //On définit le mode d'erreur de PDO sur Exception
@@ -117,14 +117,14 @@
                     echo "Erreur : " . $e->getMessage();
                     exit();
                 }
-    
+
                 header('Location: login-form.php');
                 exit;
             }
-            
+
     }
-        
-    
+
+
 ?>
 
 
@@ -153,18 +153,12 @@
             --carousel-bottom: #485461;
             --type-body: Open Sans, Helvetica, Arial, sans-serif;
         }
-        
+
         body {
             font-family: var(--type-body);
             background-color: var(--light-black);
         }
-        
-        .background-image {
-            background-image: url(./assets/car-model.jpg);
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
+
     </style>
 </head>
 
@@ -177,7 +171,7 @@
                     <div class="card card-registration my-4">
                         <div class="row g-0">
                             <div class="col-xl-6 d-none d-xl-block">
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp" alt="Sample photo" class="img-fluid" style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+                                <img src="./assets/poster-register.jpg" alt="car poster" class="img-fluid" style="position: relative; height: 100%; border: none;" />
                             </div>
                             <div class="col-xl-6">
                                 <div class="card-body p-md-5 text-black fw-bold">

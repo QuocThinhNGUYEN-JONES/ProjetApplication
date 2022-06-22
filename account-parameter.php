@@ -13,7 +13,7 @@
             session_start();
         }
         if(!isset($_SESSION['email'])){
-            header('Location: login-form.php');
+            header('Location: login-form-temp.php');
             exit();
         }
     }

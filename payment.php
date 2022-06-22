@@ -1,3 +1,9 @@
+<?php
+require_once 'connexiondb.php';
+$ppd=30;
+//$ppd=$_POST['price'];
+?>
+
 <!DOCTYPE html> 
 <html lang="fr"> 
         <head> 
@@ -19,14 +25,40 @@
                     dt_t2=new Date(t2[0],t2[1],t2[2]);
                     dt_t2_tm=dt_t2.getTime();
                     var one_day = 24*60*60*1000;
-                    return Math.abs((dt_t1_tm-dt_t2_tm)/one_day);
+                    var result = (dt_t2_tm-dt_t1_tm)/one_day;
+                    var text=result.toString();
+                    document.getElementById("dd").value = text;
+                    return result;
                 }
-                function price_calculator(daydifference,pph)
+                function button_activate()
                 {
-                    var price = Math.ceil(daydifference*pph);
-                    document.getElementById('display').innerHTML= price+"€" ;
-                    document.getElementById('display').style.display = 'inline';
-                    return price;
+                    var b = document.getElementById('checkout-button');
+                    b.disabled=false;
+                }
+                function button_desactivate()
+                {
+                    var dis = document.getElementById('display');
+                    dis.disabled=true
+                    var b = document.getElementById('checkout-button');
+                    b.disabled=true;
+                }
+                function price_calculator(daydifference)
+                {
+                    //alert(daydifference);
+                    var ppd = <?php echo $ppd; ?>;
+                    var price = Math.ceil(daydifference*ppd);
+                    var dis = document.getElementById('display');
+                    if(daydifference<=0)
+                    {
+                        dis.innerHTML= "The return date shall not take place before your retrieve date. Also do not select the same date on both fields.";
+                    }
+                    else{
+                        dis.innerHTML= price+"€" ;
+                        dis.style.display = 'inline';
+                        dis.disable=false;
+                        button_activate();
+                        return price;
+                    }
                 }
                 </script>
         </head> 
@@ -96,24 +128,29 @@
                                         </div>
                                         <div class="anchor" id="rent"></div>
                                         <h4>Rent/Price</h4>
-                                        <p>BOUTON/TEXT INPUT POUR SAVOIR COMBIEN DE TEMPS LOUER LA VOITURE</p>
+                                        <br/>
+                                        <label for="retrieve">Retrieve date:</label>
+
+                                            <input type="date" id="retrieve"  name="take" onclick="button_desactivate()" value="<?php echo date('Y-m-d'); ?>" min="<?php echo date('Y-m-d'); ?>"/>
+
+                                        <label for="return">Return date:</label>
+
+                                            <input type="date" id="return"  name="give" onclick="button_desactivate()" value="<?php echo date('Y-m-d'); ?>" min="<?php echo date('Y-m-d'); ?>"/>
+                                        <br/>
                                         <hr>
                                         <div class="anchor" id="payment"></div>
                                         <h4>Payment</h4>
-                                            <label for="retrieve">Retrieve date:</label>
-
-                                            <input type="date" id="retrieve"  name="give" value="<?php echo date('Y-m-d'); ?>" min="<?php echo date('Y-m-d'); ?>"/>
-
-                                            <label for="start">Return date:</label>
-
-                                            <input type="date" id="return"  name="give" value="<?php echo date('Y-m-d'); ?>" min="<?php echo date('Y-m-d'); ?>"/>
                                         <br/>
                                         <br/>
-                                        <p><a class="btn btn-primary btn-lg" id="btn" role="button" onclick="price_calculator(daydiff(),19.99)">GET THE PRICE</a></p>
+                                        <p><a class="btn btn-primary btn-lg" id="btn" role="button" onclick="price_calculator(daydiff())">GET THE PRICE</a></p>
                                         <br>
-                                        <p>Total : <div id="display"></div>
+                                        <p>Total : <div id="display" disabled></div>
                                         <br/><br/>
-                                        <p><a class="btn btn-primary btn-lg" href="https://buy.stripe.com/test_fZe7t0ag639P2DSeUU" id="btn" role="button">PAY</a></p>
+                                            <form action="/checkout.php" method="POST">
+                                                <input type="hidden" name="price" value="<?php echo $ppd; ?>">
+                                                <input type="hidden" id="dd" name="daydifference" value="">
+                                                <button type="submit" id="checkout-button" disabled>Checkout</button>
+                                            </form>
                                         <hr>
                                     </div>
                         </main>

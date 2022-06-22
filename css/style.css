@@ -114,6 +114,15 @@ blockquote {
     margin: 0 !important;
 }
 
+footer a>svg {
+    transition: 0.2s ease-in-out;
+}
+
+footer a>svg:hover {
+    color: white;
+    transform: scale(1.5);
+}
+
 @media (max-width: 767px) {
     .carousel-inner .carousel-item>div {
         display: none;

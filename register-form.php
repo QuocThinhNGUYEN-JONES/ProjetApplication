@@ -1,7 +1,12 @@
 <?php
      session_start();
      require_once 'connexiondb.php'; // Fichier PHP contenant la connexion à votre BDD
- 
+     if (!function_exists('str_contains')) {
+        function str_contains($haystack, $needle) {
+            return $needle !== '' && mb_strpos($haystack, $needle) !== false;
+        }
+    }
+
     if (isset($_SESSION['email'])){
         header('Location: my-account.php');
         exit();
@@ -94,19 +99,36 @@
                 //$mdp = crypt($mdp, "$6$rounds=5000$macleapersonnaliseretagardersecret$");
                 //$date_creation_compte = date('Y-m-d H:i:s');
     
+    
+                $servername = 'localhost';
+                $username = 'root';
+                $password = '';
+                //On établit la connexion
+                $conn = new mysqli($servername, $username, $password);
+                //On vérifie la connexion
+                if($conn->connect_error){
+                    die('Erreur : ' .$conn->connect_error);
+                }
+    
+    
                 try{
-                    $sql = ("INSERT INTO `users`(`login`, `password`, `name`, `last name`, `card number`, `address`, `phone`) VALUES ('$mail','$hash_mdp','$prenom','$nom','$num_etudiant','$adresse','$phone') ");
+                    $conn = new PDO("mysql:host=$servername;dbname=insacar", $username, $password);
+                    //On définit le mode d'erreur de PDO sur Exception
+                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    $sql = ("INSERT INTO `users`(`login`, `password`, `name`, `last name`, `card number`, `address`, `phone`) VALUES ('$mail','$mdp','$prenom','$nom','$num_etudiant','$adresse','$phone') ");
                     $st = $conn->prepare($sql);
                     $st->execute();
+
                 }
                 catch(PDOException $e){
-                    $err_msg = "Erreur lors de l'inscription";
+                    echo "Erreur : " . $e->getMessage();
                     exit();
                 }
     
-                header('Location: login-form-temp.php');
+                header('Location: login-form.php');
                 exit;
-            }     
+            }
+            
     }
         
     function valid_donnees($donnees){

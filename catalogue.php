@@ -79,19 +79,19 @@ function valid_donnees($donnees){
                     <a class="nav-link " href="# " data-bs-toggle="modal " data-bs-target="#modal ">Contact Us</a>
                 </li>
                 </ul>
+                
                 <ul class="navbar-nav p-lg-0 ">
                     <li class="d-flex nav-item px-lg-2 py-md-2 ">
-                        <form action="./login-form.php " class="d-flex ">
-                            <button class="btn btn-outline-warning " type="submit ">Login</button>
+                        <form action="./account-parameter.php " class="d-flex ">
+                            <button class="btn btn-outline-warning " type="submit ">Profile</button>
                         </form>
                     </li>
                     <li class="d-flex nav-item px-lg-2 py-md-2 ">
-                        <form action="./register-form.php " class="d-flex ">
-                            <button class="btn btn-warning " type="submit ">Sign Up</button>
+                        <form action="./my-account.php#offer-gallery" class="d-flex ">
+                            <button class="btn btn-outline-warning " type="submit ">Return to catalog</button>
                         </form>
                     </li>
                 </ul>
-
 
             </div>
         </div>

@@ -55,7 +55,7 @@
                         </form>
                     </li>
                     <li class="d-flex nav-item px-lg-2 py-md-2">
-                        <form action="./register" class="d-flex">
+                        <form action="./register-form.php" class="d-flex">
                             <button class="btn btn-warning" type="submit">Sign Up</button>
                         </form>
                     </li>

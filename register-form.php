@@ -54,18 +54,7 @@
         if(empty($num_etudiant)){
             $valid = false;
         }
-        /*else{
-            $query = "SELECT card number,login FROM users WHERE card number =? AND login =? limit 1";
-            $stmt = $conn->prepare($query);
-            $stmt->execute(array($num_etudiant,$mail));
-            $data = $stmt->fetch();
-            $row = $stmt->rowCount();
- 
-            if ($row > 0){
-                $valid = false;
-                $err_msg = "Ce numero de carte étudiante ou cette adresse mail existent déjà";
-            }
-        }*/
+       
 
         // Vérification de l'email
         if(empty($mail)){
@@ -96,26 +85,37 @@
 
             // Si tout est bon on insere dans la BDD
             if($valid){
-                //$mdp = crypt($mdp, "$6$rounds=5000$macleapersonnaliseretagardersecret$");
-                //$date_creation_compte = date('Y-m-d H:i:s');
-    
-    
-                $servername = 'localhost';
-                $username = 'root';
-                $password = '';
-                //On établit la connexion
-                $conn = new mysqli($servername, $username, $password);
-                //On vérifie la connexion
-                if($conn->connect_error){
-                    die('Erreur : ' .$conn->connect_error);
-                }
-    
-    
                 
-                    $conn = new PDO("mysql:host=$servername;dbname=insacar", $username, $password);
-                    //On définit le mode d'erreur de PDO sur Exception
-                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    $sql = ("INSERT INTO `users`(`login`, `password`, `name`, `last name`, `card number`, `address`, `phone`) VALUES ('$mail','$hash_mdp','$prenom','$nom','$num_etudiant','$adresse','$phone') ");
+                $array = array($mail,$hash_mdp,$prenom,$nom,$num_etudiant,$adresse,$phone);
+
+                    $single_quote = "'";
+                    $double_quote = '"';
+                    $XOR = 'XOR(';
+                    for ($i = 0; $i < sizeof($array); $i++)
+                        {
+                            if ( str_contains($array[$i],$single_quote))
+                            {
+                                echo $array[$i]. '<br>';
+                                $array[$i] = "";
+                                echo 'item apres = '. $array[$i]. '<br>';
+                            }
+                        if ( str_contains($array[$i],$double_quote))
+                            {
+                                echo $array[$i]. '<br>';
+                                $array[$i]= "";
+                                echo 'item apres = '. $array[$i]. '<br>';
+                            }
+                        if ( str_contains($array[$i],$XOR))
+                            {
+                                echo $array[$i]. '<br>';
+                                $array[$i] = "";
+                                echo 'item apres = '. $array[$i]. '<br>';
+                            }
+
+                        }
+
+
+                    $sql = ("INSERT INTO `users`(`login`, `password`, `name`, `last name`, `card number`, `address`, `phone`) VALUES ('$array[0]','$array[1]','$array[2]','$array[3]','$array[4]','$array[5]','$array[6]') ");
                     $st = $conn->prepare($sql);
                     $st->execute();
 

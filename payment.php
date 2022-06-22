@@ -48,9 +48,13 @@ $ppd=30;
                     var ppd = <?php echo $ppd; ?>;
                     var price = Math.ceil(daydifference*ppd);
                     var dis = document.getElementById('display');
-                    if(daydifference<=0)
+                    if(isNaN(price))
                     {
-                        dis.innerHTML= "The return date shall not take place before your retrieve date. Also do not select the same date on both fields.";
+                        dis.innerHTML= "At least one date has not been specified OR you did not access this page through the catalogue.";
+                    }
+                    else if(daydifference<=0)
+                    {
+                        dis.innerHTML= "The return date shall not take place before your retrieve date. Also please, do not select the same date on both fields.";
                     }
                     else{
                         dis.innerHTML= price+"€" ;

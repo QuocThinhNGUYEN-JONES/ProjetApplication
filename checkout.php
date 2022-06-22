@@ -11,7 +11,7 @@ require 'vendor/autoload.php';
 
 header('Content-Type: application/json');
 
-$YOUR_DOMAIN = 'http://localhost/result';
+$YOUR_DOMAIN = 'http://localhost';
 
 $session = \Stripe\Checkout\Session::create([
     'payment_method_types' => ['card'],
@@ -26,8 +26,8 @@ $session = \Stripe\Checkout\Session::create([
       'quantity' => 1,
     ]],
     'mode' => 'payment',
-  'success_url' => $YOUR_DOMAIN . '/success',
-  'cancel_url' => $YOUR_DOMAIN . '/cancel',
+  'success_url' => $YOUR_DOMAIN . '/success.html',
+  'cancel_url' => $YOUR_DOMAIN . '/cancel.html',
 ]);
 
 header("HTTP/1.1 303 See Other");

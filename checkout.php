@@ -1,4 +1,10 @@
 <?php
+
+if (empty($_POST['price']) || empty($_POST['daydifference'])) {
+  header('Location: https://localhost/order/cancel');
+}
+
+
 $price = (is_numeric($_POST['price']) ? (int)$_POST['price'] : 0);
 $daydiff = (is_numeric($_POST['daydifference']) ? (int)$_POST['daydifference'] : 0);
 
@@ -11,7 +17,7 @@ require 'vendor/autoload.php';
 
 header('Content-Type: application/json');
 
-$YOUR_DOMAIN = 'http://localhost';
+$YOUR_DOMAIN = 'http://localhost/';
 
 $session = \Stripe\Checkout\Session::create([
     'payment_method_types' => ['card'],
@@ -26,8 +32,8 @@ $session = \Stripe\Checkout\Session::create([
       'quantity' => 1,
     ]],
     'mode' => 'payment',
-  'success_url' => $YOUR_DOMAIN . '/order/success',
-  'cancel_url' => $YOUR_DOMAIN . '/order/cancel',
+  'success_url' => $YOUR_DOMAIN . 'order/success',
+  'cancel_url' => $YOUR_DOMAIN . 'order/cancel',
 ]);
 
 header("HTTP/1.1 303 See Other");

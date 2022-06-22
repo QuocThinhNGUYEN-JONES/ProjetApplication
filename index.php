@@ -89,7 +89,7 @@ $route = new Route();
 
 //route address and home.php file location
 
-$route->add("home", "landing-page.php");
+$route->add("/ProjetApplication/home", "landing-page.php");
 
 $route->add("login", "login-form.php");
 $route->add("register", "register-form.php");

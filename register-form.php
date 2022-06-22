@@ -11,7 +11,7 @@
         header('Location: my-account.php');
         exit();
     }
-    
+
     if(!empty($_POST))
     {
         $valid = true;
@@ -38,18 +38,18 @@
             $mdp = valid_donnees($_POST['mdp']);
             $hash_mdp = password_hash($mdp,PASSWORD_DEFAULT);                            // On récupère le mot de passe
         }
-  
- 
+
+
         // Vérification du nom
         if(empty($nom)){
             $valid = false;
         }
- 
+
         // Vérification du prenom
         if(empty($prenom)){
             $valid = false;
         }
-        
+
         // Vérification du prenom
         if(empty($num_etudiant)){
             $valid = false;
@@ -69,8 +69,8 @@
             $valid = false;
         }
 
-            
- 
+
+
         // Vérif du format de l'email
         if(!preg_match("/^[a-z0-9\-_.]+@[a-z]+\.[a-z]{2,3}$/i", $mail)){
             $valid = false;
@@ -125,7 +125,7 @@
                 header('Location: login-form-temp.php');
                 exit;
             }
-            
+
     }
         
     function valid_donnees($donnees){
@@ -162,18 +162,12 @@
             --carousel-bottom: #485461;
             --type-body: Open Sans, Helvetica, Arial, sans-serif;
         }
-        
+
         body {
             font-family: var(--type-body);
             background-color: var(--light-black);
         }
-        
-        .background-image {
-            background-image: url(./assets/car-model.jpg);
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
+
     </style>
 </head>
 
@@ -186,7 +180,7 @@
                     <div class="card card-registration my-4">
                         <div class="row g-0">
                             <div class="col-xl-6 d-none d-xl-block">
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp" alt="Sample photo" class="img-fluid" style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+                                <img src="./assets/poster-register.jpg" alt="car poster" class="img-fluid" style="position: relative; height: 100%; border: none;" />
                             </div>
                             <div class="col-xl-6">
                                 <div class="card-body p-md-5 text-black fw-bold">

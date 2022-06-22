@@ -1,4 +1,22 @@
-// 
+<?php
+   logged_only();
+   if(isset($_SESSION["email"]))
+   {
+        $firstname = $_SESSION["name"];
+        $lastname = $_SESSION["last name"];
+    }
+    
+    function logged_only(){
+        if(session_status() == PHP_SESSION_NONE){
+            session_start();
+        }
+        if(!isset($_SESSION['email'])){
+            header('Location: login-form-temp.php');
+            exit();
+        }
+    }
+    
+?>
 
 <!DOCTYPE html>
 <html lang="en">

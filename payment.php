@@ -4,25 +4,35 @@ logged_only();
 
 if(isset($_SESSION['car']))
 {
-    echo "test valide" ;
-    $car_name = $_SESSION['car'];
+    //echo "test valide" ;
+    if (isset($_GET['car']))
+        {
+            $car_name = $_GET['car'];
+        }
+        
     
     $query = "SELECT * FROM car WHERE model = ? limit 1" ;
     $stmt = $conn->prepare($query);
     $stmt->execute(array($car_name));
     $data = $stmt->fetch();
-    var_dump($data);
+    
     $ppd = $data['price'];
     $marque = $data['brand']; 
     $model = $data['model'];
-    $year = $data['year'];
-    $kilometrage = $data['distance'];
+
+    //$year = $data['year'];
+    //$kilometrage = $data['distance'];
+    //var_dump($model) ;
+    //var_dump($_SESSION['car']);
+    //var_dump($_GET['car']);
+    //echo $brand ;
+    //echo $ppd;
 
 }
-else {
+/*else {
     echo "test non valide" ;
     var_dump($_SESSION);
-}
+}*/
 
 
 
@@ -146,7 +156,8 @@ function logged_only(){
                                                 <div class="card-image">
                                                         <span class="card-notify-badge">Low KMS</span>
                                                         <span class="card-notify-year"><?php if(!empty($year)){echo($year);} ?></span>
-                                                        <?php echo('<img class="img-fluid" src="./cars_total/'.$car_name.'" alt="Alternate Text" />'); ?>
+                                                        <img class="img-fluid" src= '<?php echo ('./assets/cars_total/'.$car_name.'.png'); ?>' alt="Alternate Text" />
+                                                        
                                                 </div>
                                                 <div class="card-image-overlay m-auto">
                                                         <span class="card-detail-badge"><?php if(!empty($price))

@@ -8,7 +8,7 @@ if(isset($_SESSION['email']) && !empty(($_GET['car']))){
    {
         $firstname = $_SESSION["name"];
         $lastname = $_SESSION["last name"];
-        $_SESSION['car'] = valid_donnees($_GET['car']);
+        //$_SESSION['car'] = valid_donnees($_GET['car']);
     }
 
 function logged_only(){

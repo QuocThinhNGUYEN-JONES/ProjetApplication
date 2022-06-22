@@ -15,7 +15,7 @@
 <body onload="document.body.style.opacity='1'">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top " id="mainNavbar">
         <div class="container-fluid">
-            <a class="navbar-brand" href="./landing-page.php">
+            <a class="navbar-brand" href="./home">
                 <h2 class="" id="logo-insa">INSA'CAR</h2>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mob-navbar" aria-label="Toggle">
@@ -24,7 +24,7 @@
             <div class="collapse navbar-collapse" id="mob-navbar">
                 <ul class="navbar-nav mb-2 mb-lg-0 mx-auto ms-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./landing-page.php">Home</a>
+                        <a class="nav-link active" aria-current="page" href="./home">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">About Us</a>

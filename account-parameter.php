@@ -3,7 +3,7 @@
         {
             session_start(); //to ensure you are using same session
             session_destroy(); //destroy the session
-            header("Location: ./landing-page.php"); //to redirect back to "index.php" after logging out
+            header("Location: ./home"); //to redirect back to "index.php" after logging out
             exit();
         }
     logged_only();
@@ -13,7 +13,7 @@
             session_start();
         }
         if(!isset($_SESSION['email'])){
-            header('Location: login-form.php');
+            header('Location: /login');
             exit();
         }
     }

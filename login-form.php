@@ -26,7 +26,7 @@ if (!empty($_POST['username']) && !empty($_POST['password'])) // Si il existe le
             $_SESSION['address'] = $data['address'];
             $_SESSION['phone'] = $data['phone'];
             $_SESSION['card number'] = $data['card number'];
-            header('Location: ./my-account.php');
+            header('Location: ./profile');
             //die();   
             //exit();
 

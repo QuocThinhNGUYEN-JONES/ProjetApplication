@@ -1,4 +1,21 @@
-// 
+<?php
+   logged_only();
+   if(isset($_SESSION["email"]))
+   {
+        $firstname = $_SESSION["name"];
+        $lastname = $_SESSION["last name"];
+    }
+    
+    function logged_only(){
+        if(session_status() == PHP_SESSION_NONE){
+            session_start();
+        }
+        if(!isset($_SESSION['email'])){
+            header('Location: /login');
+            exit();
+        }
+    }    
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +33,7 @@
 <body onload="document.body.style.opacity='1'">
     <nav class=" navbar navbar-expand-lg navbar-dark bg-dark  " id="mainNavbar ">
         <div class="container-fluid ">
-            <a class="navbar-brand " href="/home">
+            <a class="navbar-brand " href="/profile">
                 <h2 class=" " id="logo-insa ">INSA'CAR</h2>
             </a>
             <button class="navbar-toggler " type="button " data-bs-toggle="collapse " data-bs-target="#mob-navbar " aria-label="Toggle ">
@@ -25,7 +42,7 @@
             <div class="collapse navbar-collapse " id="mob-navbar ">
                 <ul class="navbar-nav mb-2 mb-lg-0 mx-auto ms-0 ">
                     <li class="nav-item ">
-                        <a class="nav-link active " aria-current="page " href="/home">Home</a>
+                        <a class="nav-link active " aria-current="page " href="/profile">Home</a>
                     </li>
                     <li class="nav-item ">
                         <a class="nav-link " href="# ">About Us</a>
@@ -51,13 +68,13 @@
                 </ul>
                 <ul class="navbar-nav p-lg-0 ">
                     <li class="d-flex nav-item px-lg-2 py-md-2 ">
-                        <form action="./login-form.php " class="d-flex ">
-                            <button class="btn btn-outline-warning " type="submit ">Login</button>
+                        <form action="./profile-edit " class="d-flex ">
+                            <button class="btn btn-outline-warning " type="submit ">Profile</button>
                         </form>
                     </li>
                     <li class="d-flex nav-item px-lg-2 py-md-2 ">
-                        <form action="./register-form.php " class="d-flex ">
-                            <button class="btn btn-warning " type="submit ">Sign Up</button>
+                        <form action="./profile#offer-gallery" class="d-flex ">
+                            <button class="btn btn-outline-warning " type="submit ">return to catalog</button>
                         </form>
                     </li>
                 </ul>
@@ -74,6 +91,7 @@
     <section id="7places" class="container" style="display:none">
         <h1 class="text-center text-primary">
             Rent a 7 Places Vehicle
+            </br></br>
         </h1>
         <div class="row row-cols-auto g-4 text-center">
             <div class="col">
@@ -121,6 +139,7 @@
     <section id="berline" class="container" style="display:none">
         <h1 class="text-center text-primary">
             RENT a berline
+            </br></br>
         </h1>
         <div class="row row-cols-auto g-4 text-center">
             <div class="col">
@@ -183,6 +202,7 @@
     <section id="cabriolet"class="container" style="display:none">
         <h1 class="text-center text-primary">
             RENT a Cabriolet Car
+            </br></br>
         </h1>
         <div class="row row-cols-auto g-4 text-center">
             <div class="col">
@@ -244,6 +264,7 @@
     <section id="luxe"class="container" style="display:none">
         <h1 class="text-center text-primary">
             RENT A LUXURY car
+            </br></br>
         </h1>
         <div class="row row-cols-auto g-4 text-center">
             <div class="col">
@@ -287,6 +308,7 @@
     <section id="suv"class="container" style="display:none">
         <h1 class="text-center text-primary">
             RENT SUV
+            </br></br>
         </h1>
         <div class="row row-cols-auto g-4 text-center">
             <div class="col">
@@ -348,6 +370,7 @@
     <section id="utilitaire"class="container" style="display:none">
         <h1 class="text-center text-primary">
             RENT a Utilitaire
+            </br></br>
         </h1>
         <div class="row row-cols-auto g-4 text-center">
             <div class="col">
@@ -382,6 +405,7 @@
     <section id="ve"class="container" style="display:none">
         <h1 class="text-center text-primary">
             RENT a electric vehicle
+            </br></br>
         </h1>
         <div class="row row-cols-auto g-4 text-center">
             <div class="col">
@@ -439,7 +463,9 @@
                 </div>
             </div>
         </div>
+       
     </section>
+</br></br></br></br>
     <div class="container my-5 p-0 m-0" id="wrap-footer">
         <footer style="background-color: #c7c7c7;">
             <div class="container p-4">

@@ -81,6 +81,11 @@
             include($file);
             exit();
         }
+        function Tester($file){
+            include($file);
+            echo"$file";
+            exit();
+        }
     }
     
 
@@ -97,8 +102,8 @@ $route->add("profile", "myaccount.php");
 $route->add("catalogue", "catalogue.php");
 $route->add("profile-edit", "account-parameter.php");
 $route->add("order", "payment.php");
-$route->add("/order/success","success.html");
-$route->add("/order/cancel","cancel.html");
+$route->add("order/success","success.html");
+$route->add("order/cancel","cancel.html");
 
 
 

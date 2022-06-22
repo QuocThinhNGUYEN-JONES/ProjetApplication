@@ -127,8 +127,8 @@ if (!empty($_POST['username']) && !empty($_POST['password'])) // Si il existe le
 
                                         <div class="d-flex align-items-center justify-content-center pb-4">
                                             <p class="mb-0 me-2 ">Don't have an account?</p>
-                                            <a href="./register-form.html">
-                                                <button type="button" class="btn btn-outline-danger fw-bold">
+                                            <a href="./register-form.php">
+                                                <button type="button" class="btn btn-outline-primary fw-bold">
                                                     Create New
                                                 </button>
                                             </a>

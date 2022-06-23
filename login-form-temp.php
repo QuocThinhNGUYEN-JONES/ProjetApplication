@@ -15,7 +15,6 @@ if(!empty($_POST['username']) && !empty($_POST['password']))
     // Si le fichier existe, on le lit
     if(file_exists('./antibrute/'.$_POST['username'].'.tmp'))
     {
-        
         // On ouvre le fichier
         $fichier_tentatives = fopen('./antibrute/'.$_POST['username'].'.tmp', 'r+');
 
@@ -56,11 +55,11 @@ if(!empty($_POST['username']) && !empty($_POST['password']))
         $stmt = $conn->prepare($query);
         $stmt->execute(array($_POST['username']));
         $data_verif = $stmt->fetch();
-        
+
         // Si le pseudo existe bien
         if(!empty($data_verif['login']))
         {
-        
+
            // Si le mot de passe est bon
            if(password_verify(trim($_POST['password']),$data_verif['password'],))
            {
@@ -75,7 +74,6 @@ if(!empty($_POST['username']) && !empty($_POST['password']))
            // Si le mot de passe est faux
            else
            {
-               
                // Si le fichier n'existe pas encore, on le créé
                if($existence_ft == 1)
                {
@@ -96,12 +94,9 @@ if(!empty($_POST['username']) && !empty($_POST['password']))
                    /*if($tentatives == 2)
                    {
                        $email_administrateur = 'hamza.jaait@insa-cvl.fr';
- 
                        $sujet_notification = '[Site] Un compte membre a atteint son quota';
- 
                        $message_notification = 'Un des comptes a atteint le quota de mauvais mots de passe journalier :';
                        $message_notification .= $data_verif['username'];
- 
                        mail($email_administrateur, $sujet_notification, $message_notification);
                    }*/
 
@@ -129,7 +124,7 @@ if(!empty($_POST['username']) && !empty($_POST['password']))
     }
 
 
- 
+
     // Si on a ouvert un fichier, on le referme (eh oui, il ne faut pas l'oublier)
     if($existence_ft != 1)
     {
@@ -170,7 +165,6 @@ function valid_donnees($donnees){
             --carousel-bottom: #485461;
             --type-body: Open Sans, Helvetica, Arial, sans-serif;
         }
-        
         body {
             font-family: var(--type-body);
             background-color: var(--light-black);
@@ -178,14 +172,12 @@ function valid_donnees($donnees){
             padding: 0;
             margin: 0;
         }
-        
         .background-image {
             background-image: url(./assets/car-model.jpg);
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
         }
-        
         @media(max-width: 991px) {
             .background-image {
                 margin: 0;
@@ -209,7 +201,6 @@ function valid_donnees($donnees){
                                     <div class="text-center ">
                                         <h4 class="mt-1 mb-5 pb-1 fw-bold">INSA CAR LOGIN</h4>
                                     </div>
-                                    
 
                                     <form name = "fo"  action = "login-form-temp.php" class="fw-bold" method=POST>
                                         <p class="h5 pb-3 ">Please login to your account</p>
@@ -222,7 +213,7 @@ function valid_donnees($donnees){
                                             <label class="form-label" for="password">Password</label>
                                             <input type="password" name = "password" id="password" class="form-control required="required"" />
                                             <br>
-                                            <p id="err_msg" class="text-danger"><?php if(isset($msg_err)){ 
+                                            <p id="err_msg" class="text-danger"><?php if(isset($msg_err)){
                                                 echo($msg_err);}
                                                 ?></p>
                                         </div>
@@ -235,9 +226,9 @@ function valid_donnees($donnees){
 
                                         <div class="d-flex align-items-center justify-content-center pb-4 ">
                                             <p class="mb-0 me-2 ">Don't have an account?</p>
-                                            <a href="./register-form.html">
-                                                <button type="button" class="btn btn-outline-danger fw-bold ">
-                                                <a href="register-form.php">Create New</a> 
+                                            <a href="./register-form.php">
+                                                <button type="button" class="btn btn-outline-warning fw-bold ">
+                                                Create New
                                               </button>
                                             </a>
                                         </div>

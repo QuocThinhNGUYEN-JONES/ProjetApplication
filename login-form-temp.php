@@ -62,8 +62,9 @@ if(!empty($_POST['username']) && !empty($_POST['password']))
         {
         
            // Si le mot de passe est bon
-           if(password_verify(trim($_POST['password']),$data_verif['password'],))
+           if(password_verify(trim($_POST['password']),$data_verif['password']))
            {
+                setcookie("login",$data_verif["login"],time()+3600);
                 $_SESSION['email'] = $data_verif["login"] ;
                 $_SESSION['name'] = $data_verif['name'] ;
                 $_SESSION['last name'] = $data_verif['last name'] ;

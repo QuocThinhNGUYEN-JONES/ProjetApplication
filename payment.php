@@ -1,10 +1,30 @@
 <?php
 require_once 'connexiondb.php';
 logged_only();
-
+if (!function_exists('str_contains')) {
+    function str_contains($haystack, $needle) {
+        return $needle !== '' && mb_strpos($haystack, $needle) !== false;
+    }
+}
+$single_quote = "'";
+$double_quote = '"';
+$XOR = 'XOR(';
+$c1 = '<';
+$c2 = '>' ;
+$c3 = '/';
 if (isset($_GET['car']))
 {
-    $car_name = $_GET['car'];
+    if ( str_contains($_GET['car'],$single_quote) || str_contains($_GET['car'],$double_quote) || str_contains($_GET['car'],$XOR) || str_contains($_GET['car'],$c1) || str_contains($_GET['car'],$c2) || str_contains($_GET['car'],$c3) )
+        {
+            $car_name = "";
+            echo "car name vide";
+        }
+    else
+    {
+        echo "rentre dans le else" ;
+        $car_name = $_GET['car'];
+    }
+    echo $car_name;
     $query = "SELECT * FROM car WHERE model = ? limit 1" ;
     $stmt = $conn->prepare($query);
     $stmt->execute(array($car_name));

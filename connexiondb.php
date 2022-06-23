@@ -1,7 +1,7 @@
 <?php
-            $servername = 'localhost';
-            $username = 'root';
-            $password = '';
+            $servername = '185.221.182.93';
+            $username = 'emhakxwx_admin';
+            $password = '@2B7?EJK1M^d:yAx&_';
 
             //On établit la connexion
             $conn = new mysqli($servername, $username, $password);
@@ -13,7 +13,7 @@
             
 
             try{
-                $conn = new PDO("mysql:host=$servername;dbname=insacar", $username, $password);
+                $conn = new PDO("mysql:host=$servername;dbname=emhakxwx_insacar", $username, $password);
                 //On définit le mode d'erreur de PDO sur Exception
                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 

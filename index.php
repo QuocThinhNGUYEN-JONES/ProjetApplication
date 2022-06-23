@@ -94,7 +94,7 @@ $route = new Route();
 
 //route address and home.php file location
 
-$route->add("/ProjetApplication/home", "landing-page.php");
+$route->add("/ProjetApplication", "landing-page.php");
 
 $route->add("login", "login-form.php");
 $route->add("register", "register-form.php");
@@ -112,4 +112,3 @@ $route->add("order/cancel","cancel.html");
 //$route->notFound("404.php");
 
 ?>
-<h1>index</h1>

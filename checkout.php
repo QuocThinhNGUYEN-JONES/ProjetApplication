@@ -1,7 +1,7 @@
 <?php
 
 if (empty($_POST['price']) || empty($_POST['daydifference'])) {
-  header('Location: https://localhost/order/cancel');
+  header('Location: https://vhost1/ProjetApplication/order/cancel');
 }
 
 
@@ -17,7 +17,7 @@ require 'vendor/autoload.php';
 
 header('Content-Type: application/json');
 
-$YOUR_DOMAIN = 'https://localhost';
+$YOUR_DOMAIN = 'https://vhost1/ProjetApplication';
 
 $session = \Stripe\Checkout\Session::create([
     'payment_method_types' => ['card'],

@@ -3,8 +3,11 @@
         {
             session_start(); //to ensure you are using same session
             session_destroy(); //destroy the session
-            header("Location: ./landing-page.php"); //to redirect back to "index.php" after logging out
+            unset($_COOKIE['login']);
+			setcookie('login',"", time() -3600);
+			header("Location: ./landing-page.php"); //to redirect back to "index.php" after logging out
             exit();
+
         }
     logged_only();
    
@@ -75,7 +78,6 @@
     <form action="" method = POST>
     <div class="row justify-content-center">
         <div class="col-md-auto mb-5"><button  class="btn btn-warning" name = "Deco" type="submit">Disconnect</button></div>
-        <div class="col-md-auto mb-5"><button class="btn btn-warning" type="button">Edit Profile</button></div>
     </div>
     </form>
 

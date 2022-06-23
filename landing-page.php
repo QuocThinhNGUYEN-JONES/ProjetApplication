@@ -1,6 +1,6 @@
 <?php
     
-    if ( isset($_COOKIE['login']) )
+    if (isset($_COOKIE['login']))
     {
         header('Location: ./my-account.php');
     }
@@ -25,7 +25,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="./landing-page.php">
                 <h2 class="logo-insa">INSA'CAR</h2>
-            </a>ascasc
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mob-navbar" aria-label="Toggle">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -101,10 +101,7 @@
         <div class="row align-items-center justify-content-center">
 
             <div class="col-lg-6 text-white text-center ms-5">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime laudantium sint mollitia ipsam quisquam autem. Voluptatibus, molestiae fugit ipsum vero architecto, maxime repellat, ut corporis esse alias quos saepe odit. Nihil minima eligendi, earum
-                quia deleniti harum sed sunt quidem fugiat inventore unde facere ab beatae consequuntur sit ea iste alias pariatur dolore nostrum natus. Eveniet quas enim hic ea. Ducimus numquam in deleniti doloremque, eum maiores pariatur quibusdam quasi
-                voluptates debitis commodi unde corporis reprehenderit doloribus repellat vitae aperiam qui expedita velit provident exercitationem excepturi possimus explicabo sint. Doloribus? Mollitia quod fugiat ullam repellendus neque et veritatis
-                consequuntes.
+            INSA'Car est une entreprise française de location de voiture. Créée en 2022 par Hamza Jaait, Amine Zouaoui, Fabin Zilliox, Thinh Nguyen, Thanh Nguyen avec seulement sept voitures, aujourd’hui nous vous offrons nos services dans plus de 105 pays à travers le monde.INSA'Car s’engage à vous offrir un service premium et une voiture de location qui vous conviennent. Notre personnel hautement qualifié fera tout pour satisfaire vos envies et vos besoins.Que vous ayez besoin d'une petite voiture, d’une voiture compacte ou d’un break spacieux, notre flotte vous propose des véhicules neufs, en moyenne six mois d’ancienneté, de grandes marques telles que BMW, Audi, VW et Mercedes-Benz. INSA'Car a été élu "Leader mondial de la location de voitures pour les entreprises" en 2022 et " Meilleure société de location de voitures en France".Nous travaillons dur pour fournir un service client exceptionnel, des véhicules modernes haut de gamme. Nos agences vous offrent une sélection complète et variée de véhicules pour répondre à vos besoins de mobilité. y compris les berlines, les berlines familiales, les porteurs de personnes, les décapotables, les 4x4, les minibus et les voitures de luxe.
             </div>
             <div class="col-lg-6 text-center">
                 <img src="./assets/car-model.jpg" alt="car model" class="img-fluid w-50 h-100">
@@ -282,7 +279,7 @@
                     <div class="col-lg-6 col-md-12 mb-4">
                         <h5 class="mb-3 text-dark fw-bold">Footer content</h5>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam voluptatem veniam, est atque cumque eum delectus sint!
+                         INSA'Car vous propose une large gamme de services de location de véhicules. Nous voulons vous aider dans vos déplacements et vous donner accès aux véhicules correspondant à vos besoins pour tous vos déplacements. Retrouvez tous nos services, de la location en aller simple jusqu’à la réservation longue durée ainsi que les différentes options possibles et réservables (GPS, siège enfants, …).
                         </p>
                     </div>
                     <div class="col-lg-3 col-md-6 mb-4">

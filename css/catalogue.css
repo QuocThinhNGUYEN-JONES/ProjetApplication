@@ -31,7 +31,6 @@ body {
     background-image: linear-gradient(50deg, #ffc107, rgb(255, 104, 104));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    letter-spacing: 0.1em;
 }
 
 .card:hover {

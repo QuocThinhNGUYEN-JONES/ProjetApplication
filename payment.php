@@ -29,9 +29,9 @@ if (isset($_GET['car']))
     $stmt = $conn->prepare($query);
     $stmt->execute(array($car_name));
     $data = $stmt->fetch();
-
+    
     $ppd = $data['price'];
-    $marque = $data['brand'];
+    $marque = $data['brand']; 
     $model = $data['model'];
     $year = $data['year'];
     $kilometrage = "5000 Km";
@@ -53,9 +53,9 @@ function logged_only(){
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-        <head>
+<!DOCTYPE html> 
+<html lang="fr"> 
+        <head> 
                 <title>INSA CAR - Payment</title>
                 <?php require("header.html") ?>
                 <link  rel="stylesheet" href="css/style_inner_payment.css">
@@ -114,8 +114,8 @@ function logged_only(){
                     }
                 }
                 </script>
-        </head>
-        <body>
+        </head> 
+        <body> 
         <div class="d-flex flex-column min-vh-100">
     <nav class="navbar navbar-expand-md sticky-to navbar-light bg-light pt-1">
         <a class="navbar-brand" href="home" data-target="index:not(.show)" data-toggle="collapse" data-parent="#page-content">Home</a>
@@ -158,15 +158,15 @@ function logged_only(){
                                         <h4>Information</h4>
                                                 <div class="col-md-4">
                                                 <p>Equipements et options : ABS, Antipatinage (ASR), Airbags frontaux + latéraux, Projecteurs Xénon ou bi-Xénon, Contrôle de stabilité (ESP), Régulateur de vitesse, Allumage automatique des feux, Rétroviseurs électriques, Suspension sport, Direction assistée, Banquette AR 1/3 - 2/3, Vitres électriques, Volant multifonctions, Siégés sport cuir, Climatisation automatique multizones, Fermeture centralisée, Vitres teintées. </p>
-                                                </div>
+                                                </div>  
 
                                                 <div class="col-md-4" id="ads">
                                                 <div class="card rounded">
                                                 <div class="card-image">
                                                         <span class="card-notify-badge">Low KMS</span>
                                                         <span class="card-notify-year"><?php if(!empty($year)){echo($year);} ?></span>
-                                                        <img class="img-fluid" src= '<?php echo ('./assets/cars_total/'.$car_name.'.png'); ?>' alt="Car to rent" />
-
+                                                        <img class="img-fluid" src= '<?php echo ('./assets/cars_total/'.$car_name.'.png'); ?>' alt="Alternate Text" />
+                                                        
                                                 </div>
                                                 <div class="card-image-overlay m-auto">
                                                         <span class="card-detail-badge"><?php if(!empty($price))
@@ -211,5 +211,5 @@ function logged_only(){
                         </main>
         <?php require("footer.html") ?>
 </div>
-        </body>
-</html>
+        </body> 
+</html> 

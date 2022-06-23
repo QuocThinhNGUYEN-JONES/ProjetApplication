@@ -54,7 +54,7 @@
         if(empty($num_etudiant)){
             $valid = false;
         }
-
+       
 
         // Vérification de l'email
         if(empty($mail)){
@@ -76,7 +76,7 @@
             $valid = false;
             $er_mail = "Le mail n'est pas valide";
         }
-
+ 
         // Verif mdp
         if(empty($mdp)) {
             $valid = false;
@@ -85,7 +85,7 @@
 
             // Si tout est bon on insere dans la BDD
             if($valid){
-
+                
                 $array = array($mail,$hash_mdp,$prenom,$nom,$num_etudiant,$adresse,$phone);
 
                     $single_quote = "'";
@@ -119,15 +119,15 @@
                     $st = $conn->prepare($sql);
                     $st->execute();
 
-
-
-
+                
+               
+    
                 header('Location: login-form-temp.php');
                 exit;
             }
 
     }
-
+        
     function valid_donnees($donnees){
         $donnees = trim($donnees);
         $donnees = stripslashes($donnees);
@@ -226,7 +226,7 @@
                                         <input type="password" id="mdp" name="mdp" class="form-control form-control-lg" required/>
                                         <p><?php if(isset($err_msg)){
                                             echo($err_msg);
-                                            }
+                                            } 
                                             ?></p>
                                     </div>
                                     <div class="d-flex justify-content-end pt-3">

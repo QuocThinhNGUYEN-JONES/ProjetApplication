@@ -40,10 +40,9 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Our Services</a>
                         <ul class="dropdown-menu animate slideIn" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Buy a car</a></li>
-                            <li><a class="dropdown-item" href="#">Reserve a car</a></li>
+                            <li><a class="dropdown-item" href="#offer-gallery">Reserve a car</a></li>
                             <li>
-                                <a class="dropdown-item" href="#">Car renting</a>
+                                <a class="dropdown-item" href="#offer-gallery">Car renting</a>
                             </li>
                             <li>
                                 <hr class="dropdown-divider" />
